@@ -1,0 +1,630 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modhur Hari | South Asia Bazar 3.0</title>
+
+<style>
+:root {
+  --brown:#512d20;
+  --orange:#bd7041;
+  --cream:#fff8ed;
+  --gold:#eab96d;
+  --dark:#302019;
+}
+
+* {margin:0;padding:0;box-sizing:border-box}
+html {scroll-behavior:smooth}
+body {
+  font-family:Arial,sans-serif;
+  background:var(--cream);
+  color:var(--dark);
+}
+header {
+  background:var(--brown);
+  color:white;
+  padding:16px 6%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:15px;
+}
+.logo {font-size:27px;font-weight:800;color:var(--gold)}
+nav {display:flex;gap:18px;flex-wrap:wrap}
+nav a {color:white;text-decoration:none;font-size:14px}
+nav a:hover {color:var(--gold)}
+
+.hero {
+  min-height:440px;
+  background:linear-gradient(120deg,#43251b,#9b5531);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:white;
+  padding:50px 20px;
+}
+.hero .tag {
+  color:var(--gold);
+  letter-spacing:4px;
+  font-size:13px;
+  font-weight:bold;
+}
+.hero h1 {
+  font-size:clamp(45px,8vw,76px);
+  margin:18px 0;
+  color:#ffdda4;
+}
+.hero p {font-size:18px;line-height:1.8}
+.hero button {
+  margin-top:25px;
+  background:var(--gold);
+  color:var(--brown);
+  padding:14px 30px;
+  border:0;
+  border-radius:30px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.event-info {
+  display:flex;
+  justify-content:center;
+  gap:35px;
+  flex-wrap:wrap;
+  background:#fff0d8;
+  padding:22px;
+  text-align:center;
+}
+.event-info strong {color:var(--brown)}
+section {padding:65px 7%}
+.heading {
+  text-align:center;
+  margin-bottom:35px;
+}
+.heading h2 {font-size:34px;color:var(--brown)}
+.heading p {color:#8c705e;margin-top:10px}
+
+.food-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+  gap:24px;
+}
+.card {
+  background:white;
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow:0 5px 20px #00000010;
+  text-align:center;
+  transition:.3s;
+}
+.card:hover {transform:translateY(-6px)}
+.food-image {
+  height:165px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:76px;
+  background:#f7e9d4;
+}
+.card-content {padding:20px}
+.card h3 {font-size:19px;margin-bottom:10px}
+.price {
+  color:var(--orange);
+  font-size:20px;
+  font-weight:bold;
+  margin:12px;
+}
+.btn {
+  background:var(--brown);
+  color:white;
+  padding:11px 23px;
+  border:0;
+  border-radius:25px;
+  cursor:pointer;
+  font-weight:bold;
+}
+.btn:hover {background:var(--orange)}
+.product-area {
+  background:#f3e5d1;
+}
+.product-card {
+  max-width:350px;
+  margin:auto;
+}
+.product-icon {
+  height:220px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:100px;
+  background:#ead2ad;
+}
+
+.game-area {
+  text-align:center;
+  background:#fff1dc;
+}
+.game-box {
+  max-width:500px;
+  margin:auto;
+  padding:35px 20px;
+  background:white;
+  border-radius:20px;
+  box-shadow:0 5px 20px #00000012;
+}
+.game-stage {
+  height:210px;
+  position:relative;
+  display:flex;
+  justify-content:center;
+  align-items:flex-end;
+  margin:20px auto;
+  border-bottom:5px solid #b88c5a;
+  max-width:300px;
+}
+.cup {
+  font-size:100px;
+  position:relative;
+}
+.ball {
+  position:absolute;
+  bottom:20px;
+  left:20px;
+  font-size:30px;
+  transition:all .7s ease-in;
+}
+.ball.shoot {
+  left:calc(50% - 15px);
+  bottom:125px;
+}
+.game-result {
+  min-height:35px;
+  margin:18px;
+  font-size:18px;
+  font-weight:bold;
+  color:var(--brown);
+}
+.score {font-size:20px;margin:10px}
+
+.cart-section {background:#fff}
+.cart-box {
+  max-width:650px;
+  margin:auto;
+  background:#fff8ed;
+  padding:25px;
+  border-radius:15px;
+}
+.cart-row {
+  display:flex;
+  justify-content:space-between;
+  padding:12px 0;
+  border-bottom:1px solid #e6d7c5;
+  gap:10px;
+}
+.cart-total {
+  font-size:23px;
+  font-weight:bold;
+  text-align:right;
+  margin:20px 0;
+}
+.remove {
+  border:0;
+  color:#b33;
+  background:none;
+  cursor:pointer;
+}
+
+.people-section {background:#fff}
+.people-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+  gap:22px;
+}
+.person-card {
+  background:#fffaf3;
+  text-align:center;
+  padding:22px 12px;
+  border-radius:15px;
+  box-shadow:0 4px 15px #00000010;
+}
+.person-photo {
+  width:125px;
+  height:125px;
+  border-radius:50%;
+  margin:0 auto 16px;
+  overflow:hidden;
+  background:#ead6b9;
+  border:4px solid var(--gold);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--brown);
+  font-size:35px;
+  font-weight:bold;
+}
+.person-photo img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.person-card h3 {font-size:16px;margin-bottom:8px}
+.person-card p {font-size:13px;color:#806a5b;margin:5px 0}
+.person-number {
+  font-size:12px;
+  color:var(--orange);
+  margin-bottom:12px;
+  font-weight:bold;
+}
+
+.volunteer-section {background:#f4e5d0}
+
+footer {
+  background:var(--brown);
+  color:white;
+  text-align:center;
+  padding:40px 20px;
+}
+footer h2 {color:var(--gold);margin-bottom:12px}
+footer p {margin:8px;font-size:14px}
+
+@media(max-width:600px) {
+  header {justify-content:center}
+  nav {justify-content:center}
+  nav a {font-size:12px}
+  section {padding:45px 5%}
+  .heading h2 {font-size:28px}
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="logo">🍯 Modhur Hari</div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#food">Food Menu</a>
+    <a href="#product">Product</a>
+    <a href="#game">Game</a>
+    <a href="#team">Our Team</a>
+    <a href="#volunteers">Volunteers</a>
+    <a href="#cart">Cart 🛒</a>
+  </nav>
+</header>
+
+<!-- HOME -->
+<div class="hero" id="home">
+  <div class="tag">SOUTH ASIA BAZAR 3.0</div>
+  <h1>Modhur Hari</h1>
+  <p>A Little Taste of Happiness!</p>
+  <p>Food • Fun • Memories</p>
+  <button onclick="location.href='#food'">EXPLORE OUR STALL</button>
+</div>
+
+<div class="event-info">
+  <div>
+    <strong>EVENT</strong>
+    <p>South Asia Bazar 3.0</p>
+  </div>
+  <div>
+    <strong>VENUE</strong>
+    <p>University of South Asia</p>
+  </div>
+  <div>
+    <strong>STALL</strong>
+    <p>Modhur Hari</p>
+  </div>
+</div>
+
+<!-- FOOD MENU -->
+<section id="food">
+  <div class="heading">
+    <h2>Our Food Menu</h2>
+    <p>Delicious food, unforgettable moments!</p>
+  </div>
+
+  <div class="food-grid" id="foodGrid"></div>
+</section>
+
+<!-- PRODUCT -->
+<section class="product-area" id="product">
+  <div class="heading">
+    <h2>Our Special Product</h2>
+    <p>A little souvenir from Modhur Hari.</p>
+  </div>
+
+  <div class="card product-card">
+    <div class="product-icon">🔑</div>
+    <div class="card-content">
+      <h3>Modhur Hari Keyring</h3>
+      <p>Take a little memory home!</p>
+      <p class="price">Available at Stall</p>
+    </div>
+  </div>
+</section>
+
+<!-- CUP SHOT GAME -->
+<section class="game-area" id="game">
+  <div class="heading">
+    <h2>🎯 Cup Shot Challenge</h2>
+    <p>Play the game and test your luck!</p>
+  </div>
+
+  <div class="game-box">
+    <h3>Can You Make The Shot?</h3>
+    <p>Try to throw the ball into the cup!</p>
+
+    <div class="game-stage">
+      <div class="ball" id="ball">⚽</div>
+      <div class="cup">🥤</div>
+    </div>
+
+    <div class="score">
+      Score: <span id="score">0</span>
+    </div>
+
+    <div class="game-result" id="gameResult">
+      Ready for the challenge?
+    </div>
+
+    <button class="btn" id="shootBtn" onclick="shoot()">THROW BALL</button>
+    <button class="btn" onclick="resetGame()">RESET</button>
+  </div>
+</section>
+
+<!-- CART -->
+<section class="cart-section" id="cart">
+  <div class="heading">
+    <h2>Your Cart 🛒</h2>
+    <p>Check your selected food items.</p>
+  </div>
+
+  <div class="cart-box">
+    <div id="cartItems">Your cart is empty.</div>
+
+    <div class="cart-total">
+      Total: ৳<span id="total">0</span>
+    </div>
+
+    <button class="btn" onclick="checkout()">Place Order</button>
+    <button class="btn" onclick="clearCart()">Clear Cart</button>
+  </div>
+</section>
+
+<!-- TEAM MEMBERS -->
+<section class="people-section" id="team">
+  <div class="heading">
+    <h2>Meet Our Team</h2>
+    <p>The people behind Modhur Hari ❤️</p>
+  </div>
+
+  <div class="people-grid" id="teamGrid"></div>
+</section>
+
+<!-- VOLUNTEERS -->
+<section class="volunteer-section" id="volunteers">
+  <div class="heading">
+    <h2>Our Volunteers</h2>
+    <p>Special thanks to our volunteers!</p>
+  </div>
+
+  <div class="people-grid" id="volunteerGrid"></div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <h2>🍯 Modhur Hari</h2>
+  <p>South Asia Bazar 3.0</p>
+  <p>University of South Asia</p>
+  <p>Food • Fun • Memories</p>
+  <br>
+  <p>© 2026 Modhur Hari. All Rights Reserved.</p>
+</footer>
+
+<script>
+
+// FOOD ITEMS
+const foods = [
+  {name:"Papri Chaat",price:29,emoji:"🥗"},
+  {name:"Polao & Chicken Kofta",price:79,emoji:"🍛"},
+  {name:"American Chips Salad",price:49,emoji:"🥔"},
+  {name:"Lajuk Piyaju",price:19,emoji:"🧆"},
+  {name:"Tiramisu",price:49,emoji:"🍰"}
+];
+
+const foodGrid = document.getElementById("foodGrid");
+
+foods.forEach((food,index) => {
+  foodGrid.innerHTML += `
+    <div class="card">
+      <div class="food-image">${food.emoji}</div>
+      <div class="card-content">
+        <h3>${food.name}</h3>
+        <div class="price">৳${food.price}/-</div>
+        <button class="btn" onclick="addToCart(${index})">
+          ADD TO CART
+        </button>
+      </div>
+    </div>
+  `;
+});
+
+// TEAM MEMBERS
+const members = [
+  ["Moutushi Sultana","8th","242-0375-001","moutushi.jpg"],
+  ["Sahariya Sultana Eva","1st","263-0352-001","sahariya.jpg"],
+  ["Sham Sundar Ghosh","2nd","262-0330-001","sham.jpg"],
+  ["Md Radi Islam Rafi","2nd","262-0451-001","rafi.jpg"],
+  ["Md. Didar Ahmmed Sajon","4th","253-0407-001","sajon.jpg"],
+  ["Md Moniruzzaman Hridoy","2nd","262-0132-001","hridoy.jpg"],
+  ["Sheikh Rakibul Hassan","2nd","262-0198-001","rakibul.jpg"],
+  ["Rashidul Islam","1st","262-0102-001","rashidul.jpg"],
+  ["Sanjida Akter Happy","1st","263-0483-001","happy.jpg"],
+  ["Shumona Sumu","1st","263-0002-001","sumu.jpg"]
+];
+
+// VOLUNTEERS
+const volunteers = [
+  ["Azwa Abbas Nuha","242-0399-005","azwa.jpg"],
+  ["Maimuna Binte Azad","262-0032-004","maimuna.jpg"]
+];
+
+// INITIALS
+function initials(name) {
+  return name.split(" ").slice(0,2)
+    .map(word=>word[0]).join("").toUpperCase();
+}
+
+// PERSON CARD
+function personCard(name,semester,id,photo,index) {
+  return `
+    <div class="person-card">
+      <div class="person-number">MEMBER ${index+1}</div>
+      <div class="person-photo">
+        <img src="images/${photo}"
+          alt="${name}"
+          onerror="this.style.display='none'">
+        <span>${initials(name)}</span>
+      </div>
+      <h3>${name}</h3>
+      ${semester ? `<p>Semester: ${semester}</p>` : ""}
+      <p>Student ID: ${id}</p>
+    </div>
+  `;
+}
+
+// RENDER TEAM
+document.getElementById("teamGrid").innerHTML =
+members.map((m,i)=>personCard(m[0],m[1],m[2],m[3],i)).join("");
+
+// RENDER VOLUNTEERS
+document.getElementById("volunteerGrid").innerHTML =
+volunteers.map((v,i)=>personCard(v[0],"",v[1],v[2],i)).join("");
+
+// SHOPPING CART
+let cart = [];
+
+function addToCart(index) {
+  const food = foods[index];
+  cart.push({...food});
+  updateCart();
+}
+
+function removeItem(index) {
+  cart.splice(index,1);
+  updateCart();
+}
+
+function updateCart() {
+  const container = document.getElementById("cartItems");
+
+  if(cart.length===0) {
+    container.innerHTML="Your cart is empty.";
+  } else {
+    container.innerHTML=cart.map((item,index)=>`
+      <div class="cart-row">
+        <span>${item.name}</span>
+        <span>
+          ৳${item.price}
+          <button class="remove" onclick="removeItem(${index})">✖</button>
+        </span>
+      </div>
+    `).join("");
+  }
+
+  const total = cart.reduce((sum,item)=>sum+item.price,0);
+  document.getElementById("total").innerText=total;
+}
+
+function clearCart() {
+  cart=[];
+  updateCart();
+}
+
+function checkout() {
+  if(cart.length===0) {
+    alert("Your cart is empty!");
+    return;
+  }
+
+  let message="MODHUR HARI ORDER\n\n";
+
+  cart.forEach(item=>{
+    message+=item.name+" - ৳"+item.price+"\n";
+  });
+
+  const total=cart.reduce((sum,item)=>sum+item.price,0);
+  message+="\nTotal Bill: ৳"+total;
+  message+="\n\nPlease visit our stall to complete your order.";
+
+  alert(message);
+}
+
+// CUP SHOT GAME
+let score=0;
+let shots=0;
+let busy=false;
+
+function shoot() {
+  if(busy) return;
+
+  if(shots>=5) {
+    document.getElementById("gameResult").innerText=
+      "Game Over! Press RESET to play again.";
+    return;
+  }
+
+  busy=true;
+  shots++;
+
+  const ball=document.getElementById("ball");
+  const result=document.getElementById("gameResult");
+  const btn=document.getElementById("shootBtn");
+
+  btn.disabled=true;
+  ball.classList.add("shoot");
+
+  setTimeout(()=>{
+    const success=Math.random()<0.5;
+
+    if(success) {
+      score+=10;
+      result.innerText="🎉 Excellent Shot! +10 Points";
+    } else {
+      result.innerText="😃 Missed! Try Again!";
+    }
+
+    document.getElementById("score").innerText=score;
+
+    ball.classList.remove("shoot");
+    ball.style.left="20px";
+    busy=false;
+    btn.disabled=false;
+
+    if(shots===5) {
+      result.innerText+=` Final Score: ${score}/50`;
+    }
+  },800);
+}
+
+function resetGame() {
+  score=0;
+  shots=0;
+  busy=false;
+
+  document.getElementById("score").innerText=0;
+  document.getElementById("gameResult").innerText=
+    "Ready for the challenge?";
+  document.getElementById("ball").classList.remove("shoot");
+  document.getElementById("shootBtn").disabled=false;
+}
+
+</script>
+</body>
+</html>
