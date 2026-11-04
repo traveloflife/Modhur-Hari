@@ -7,47 +7,66 @@
 <title>Modhur Hari | South Asia Bazar 3.0</title>
 
 <style>
-:root {
-  --brown:#512d20;
-  --orange:#bd7041;
-  --cream:#fff8ed;
-  --gold:#eab96d;
-  --dark:#302019;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
 }
 
-* {margin:0;padding:0;box-sizing:border-box}
-html {scroll-behavior:smooth}
 body {
-  font-family:Arial,sans-serif;
-  background:var(--cream);
-  color:var(--dark);
+    background: #fffdf8;
+    color: #333;
 }
+
+/* HEADER */
 header {
-  background:var(--brown);
-  color:white;
-  padding:16px 6%;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  flex-wrap:wrap;
-  gap:15px;
+    background: #71301f;
+    color: white;
+    min-height: 75px;
+    padding: 8px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
 }
-.logo {font-size:27px;font-weight:800;color:var(--gold)}
-nav {display:flex;gap:18px;flex-wrap:wrap}
-nav a {color:white;text-decoration:none;font-size:14px}
-nav a:hover {color:var(--gold)}
 
+.logo {
+    display: flex;
+    align-items: center;
+}
 
+.logo img {
+    width: 65px;
+    height: 58px;
+    object-fit: contain;
+    display: block;
+}
 
-    background:
-    linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.45)),
-    url("images/cover.jpg");
+nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 18px;
+}
 
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+}
 
+nav a:hover {
+    color: #ffd77b;
+}
+
+/* HERO */
+.hero {
     min-height: 400px;
+    background: linear-gradient(135deg, #8b4513, #d4a017);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -56,237 +75,356 @@ nav a:hover {color:var(--gold)}
     color: white;
     padding: 50px 20px;
 }
-}
+
 .hero .tag {
-  color:var(--gold);
-  letter-spacing:4px;
-  font-size:13px;
-  font-weight:bold;
+    font-size: 14px;
+    margin-bottom: 20px;
 }
+
 .hero h1 {
-  font-size:clamp(45px,8vw,76px);
-  margin:18px 0;
-  color:#ffdda4;
-}
-.hero p {font-size:18px;line-height:1.8}
-.hero button {
-  margin-top:25px;
-  background:var(--gold);
-  color:var(--brown);
-  padding:14px 30px;
-  border:0;
-  border-radius:30px;
-  font-weight:bold;
-  cursor:pointer;
+    font-size: 52px;
+    margin-bottom: 15px;
 }
 
+.hero p {
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+.main-btn {
+    display: inline-block;
+    margin-top: 20px;
+    background: #ffda8a;
+    color: #71301f;
+    padding: 13px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* EVENT INFO */
 .event-info {
-  display:flex;
-  justify-content:center;
-  gap:35px;
-  flex-wrap:wrap;
-  background:#fff0d8;
-  padding:22px;
-  text-align:center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 60px;
+    padding: 25px 15px;
+    background: #fff7e8;
+    text-align: center;
 }
-.event-info strong {color:var(--brown)}
-section {padding:65px 7%}
-.heading {
-  text-align:center;
-  margin-bottom:35px;
-}
-.heading h2 {font-size:34px;color:var(--brown)}
-.heading p {color:#8c705e;margin-top:10px}
 
+.event-info h4 {
+    font-size: 13px;
+    color: #71301f;
+    margin-bottom: 5px;
+}
+
+.event-info p {
+    font-size: 13px;
+}
+
+/* GENERAL SECTION */
+section {
+    padding: 55px 6%;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.section-heading h2 {
+    font-size: 30px;
+    color: #71301f;
+    margin-bottom: 10px;
+}
+
+.section-heading p {
+    color: #777;
+    font-size: 14px;
+}
+
+/* FOOD MENU */
 .food-grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
-  gap:24px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 22px;
 }
-.card {
-  background:white;
-  border-radius:16px;
-  overflow:hidden;
-  box-shadow:0 5px 20px #00000010;
-  text-align:center;
-  transition:.3s;
+
+.food-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+    transition: 0.3s;
 }
-.card:hover {transform:translateY(-6px)}
+
+.food-card:hover {
+    transform: translateY(-5px);
+}
+
 .food-image {
-  height:165px;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  font-size:76px;
-  background:#f7e9d4;
+    height: 180px;
+    background: #fff3df;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.card-content {padding:20px}
-.card h3 {font-size:19px;margin-bottom:10px}
+
+.food-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.food-fallback {
+    font-size: 65px;
+    display: none;
+}
+
+.food-details {
+    padding: 18px;
+}
+
+.food-details h3 {
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
 .price {
-  color:var(--orange);
-  font-size:20px;
-  font-weight:bold;
-  margin:12px;
-}
-.btn {
-  background:var(--brown);
-  color:white;
-  padding:11px 23px;
-  border:0;
-  border-radius:25px;
-  cursor:pointer;
-  font-weight:bold;
-}
-.btn:hover {background:var(--orange)}
-.product-area {
-  background:#f3e5d1;
-}
-.product-card {
-  max-width:350px;
-  margin:auto;
-}
-.product-icon {
-  height:220px;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  font-size:100px;
-  background:#ead2ad;
+    color: #9b4a22;
+    font-weight: bold;
+    margin-bottom: 12px;
 }
 
-.game-area {
-  text-align:center;
-  background:#fff1dc;
+.action-btn {
+    background: #71301f;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 20px;
+    cursor: pointer;
 }
+
+.action-btn:hover {
+    background: #a65a27;
+}
+
+/* PRODUCT */
+.product-box {
+    max-width: 350px;
+    margin: auto;
+    text-align: center;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+}
+
+.product-image {
+    height: 190px;
+    background: #fff3df;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.product-fallback {
+    font-size: 75px;
+    display: none;
+}
+
+/* GAME */
 .game-box {
-  max-width:500px;
-  margin:auto;
-  padding:35px 20px;
-  background:white;
-  border-radius:20px;
-  box-shadow:0 5px 20px #00000012;
-}
-.game-stage {
-  height:210px;
-  position:relative;
-  display:flex;
-  justify-content:center;
-  align-items:flex-end;
-  margin:20px auto;
-  border-bottom:5px solid #b88c5a;
-  max-width:300px;
-}
-.cup {
-  font-size:100px;
-  position:relative;
-}
-.ball {
-  position:absolute;
-  bottom:20px;
-  left:20px;
-  font-size:30px;
-  transition:all .7s ease-in;
-}
-.ball.shoot {
-  left:calc(50% - 15px);
-  bottom:125px;
-}
-.game-result {
-  min-height:35px;
-  margin:18px;
-  font-size:18px;
-  font-weight:bold;
-  color:var(--brown);
-}
-.score {font-size:20px;margin:10px}
-
-.cart-section {background:#fff}
-.cart-box {
-  max-width:650px;
-  margin:auto;
-  background:#fff8ed;
-  padding:25px;
-  border-radius:15px;
-}
-.cart-row {
-  display:flex;
-  justify-content:space-between;
-  padding:12px 0;
-  border-bottom:1px solid #e6d7c5;
-  gap:10px;
-}
-.cart-total {
-  font-size:23px;
-  font-weight:bold;
-  text-align:right;
-  margin:20px 0;
-}
-.remove {
-  border:0;
-  color:#b33;
-  background:none;
-  cursor:pointer;
+    max-width: 500px;
+    margin: auto;
+    background: #fff5e5;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
 }
 
-.people-section {background:#fff}
+.game-box h3 {
+    color: #71301f;
+    margin-bottom: 15px;
+}
+
+.game-box p {
+    margin: 12px 0;
+}
+
+.game-btn {
+    background: #71301f;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+#game-result {
+    font-weight: bold;
+    margin-top: 18px;
+}
+
+/* TEAM */
 .people-grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
-  gap:22px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 20px;
 }
+
 .person-card {
-  background:#fffaf3;
-  text-align:center;
-  padding:22px 12px;
-  border-radius:15px;
-  box-shadow:0 4px 15px #00000010;
+    background: white;
+    padding: 18px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.07);
 }
+
 .person-photo {
-  width:125px;
-  height:125px;
-  border-radius:50%;
-  margin:0 auto 16px;
-  overflow:hidden;
-  background:#ead6b9;
-  border:4px solid var(--gold);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:var(--brown);
-  font-size:35px;
-  font-weight:bold;
+    width: 105px;
+    height: 105px;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+    overflow: hidden;
+    background: #f3dfc2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    color: #71301f;
 }
+
 .person-photo img {
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
-.person-card h3 {font-size:16px;margin-bottom:8px}
-.person-card p {font-size:13px;color:#806a5b;margin:5px 0}
-.person-number {
-  font-size:12px;
-  color:var(--orange);
-  margin-bottom:12px;
-  font-weight:bold;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.volunteer-section {background:#f4e5d0}
+.person-card h3 {
+    font-size: 15px;
+    margin-bottom: 8px;
+}
 
+.person-card p {
+    color: #777;
+    font-size: 13px;
+}
+
+/* CART */
+.cart-box {
+    max-width: 650px;
+    margin: auto;
+    padding: 25px;
+    background: #fff5e5;
+    border-radius: 12px;
+}
+
+.cart-box h3 {
+    color: #71301f;
+    margin-bottom: 15px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 0;
+    border-bottom: 1px solid #e5d3bb;
+}
+
+.remove-btn {
+    border: none;
+    background: #a52a2a;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.total {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #71301f;
+}
+
+.checkout-btn {
+    width: 100%;
+    padding: 13px;
+    margin-top: 18px;
+    background: #71301f;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+/* FOOTER */
 footer {
-  background:var(--brown);
-  color:white;
-  text-align:center;
-  padding:40px 20px;
+    background: #71301f;
+    color: white;
+    text-align: center;
+    padding: 30px 15px;
 }
-footer h2 {color:var(--gold);margin-bottom:12px}
-footer p {margin:8px;font-size:14px}
 
-@media(max-width:600px) {
-  header {justify-content:center}
-  nav {justify-content:center}
-  nav a {font-size:12px}
-  section {padding:45px 5%}
-  .heading h2 {font-size:28px}
+footer h2 {
+    margin-bottom: 10px;
+}
+
+footer p {
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* MOBILE */
+@media(max-width: 600px) {
+    header {
+        justify-content: center;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .hero {
+        min-height: 350px;
+    }
+
+    .event-info {
+        gap: 20px;
+    }
+
+    section {
+        padding: 40px 5%;
+    }
+
+    .section-heading h2 {
+        font-size: 25px;
+    }
 }
 </style>
 </head>
@@ -295,347 +433,412 @@ footer p {margin:8px;font-size:14px}
 
 <!-- HEADER -->
 <header>
-  <div class="logo">     <img src="images/logo.png.png"
-     alt="Modhur Hari Logo"
-     style="width:65px; height:65px; object-fit:contain;"> </div>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#food">Food Menu</a>
-    <a href="#product">Product</a>
-    <a href="#game">Game</a>
-    <a href="#team">Our Team</a>
-    <a href="#volunteers">Volunteers</a>
-    <a href="#cart">Cart 🛒</a>
-  </nav>
+    <div class="logo">
+        <img src="images/logo.png.png"
+             alt="Modhur Hari Logo">
+    </div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#food">Food Menu</a>
+        <a href="#product">Product</a>
+        <a href="#game">Game</a>
+        <a href="#team">Our Team</a>
+        <a href="#volunteers">Volunteers</a>
+        <a href="#cart">Cart 🛒</a>
+    </nav>
 </header>
 
 <!-- HOME -->
 <div class="hero" id="home">
-  <div class="tag">SOUTH ASIA BAZAR 3.0</div>
-  <h1>Modhur Hari</h1>
-  <p>A Little Taste of Happiness!</p>
-  <p>Food • Fun • Memories</p>
-  <button onclick="location.href='#food'">EXPLORE OUR STALL</button>
+    <div class="tag">SOUTH ASIA BAZAR 3.0</div>
+    <h1>Modhur Hari</h1>
+    <p>A Little Taste of Happiness!</p>
+    <p>Food • Fun • Memories</p>
+    <a href="#food" class="main-btn">EXPLORE OUR STALL</a>
 </div>
 
+<!-- EVENT INFO -->
 <div class="event-info">
-  <div>
-    <strong>EVENT</strong>
-    <p>South Asia Bazar 3.0</p>
-  </div>
-  <div>
-    <strong>VENUE</strong>
-    <p>University of South Asia</p>
-  </div>
-  <div>
-    <strong>STALL</strong>
-    <p>Modhur Hari</p>
-  </div>
+    <div>
+        <h4>EVENT</h4>
+        <p>South Asia Bazar 3.0</p>
+    </div>
+
+    <div>
+        <h4>VENUE</h4>
+        <p>University of South Asia</p>
+    </div>
+
+    <div>
+        <h4>STALL</h4>
+        <p>Modhur Hari</p>
+    </div>
 </div>
 
 <!-- FOOD MENU -->
 <section id="food">
-  <div class="heading">
-    <h2>Our Food Menu</h2>
-    <p>Delicious food, unforgettable moments!</p>
-  </div>
+    <div class="section-heading">
+        <h2>Our Food Menu</h2>
+        <p>Delicious food, unforgettable moments!</p>
+    </div>
 
-  <div class="food-grid" id="foodGrid"></div>
+    <div class="food-grid" id="food-list"></div>
 </section>
 
 <!-- PRODUCT -->
-<section class="product-area" id="product">
-  <div class="heading">
-    <h2>Our Special Product</h2>
-    <p>A little souvenir from Modhur Hari.</p>
-  </div>
-
-  <div class="card product-card">
-    <div class="product-icon">🔑</div>
-    <div class="card-content">
-      <h3>Modhur Hari Keyring</h3>
-      <p>Take a little memory home!</p>
-      <p class="price">Available at Stall</p>
+<section id="product">
+    <div class="section-heading">
+        <h2>Our Special Product</h2>
+        <p>Something special from Modhur Hari!</p>
     </div>
-  </div>
+
+    <div class="product-box">
+        <div class="product-image">
+            <img src="images/keyring.jpg"
+                 alt="Modhur Hari Keyring"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+            <div class="product-fallback">🔑</div>
+        </div>
+
+        <h3>Modhur Hari Keyring</h3>
+        <p style="margin:12px 0;color:#777;">
+            A little memory to take home!
+        </p>
+        <p class="price">Available at Stall</p>
+    </div>
 </section>
 
-<!-- CUP SHOT GAME -->
-<section class="game-area" id="game">
-  <div class="heading">
-    <h2>🎯 Cup Shot Challenge</h2>
-    <p>Play the game and test your luck!</p>
-  </div>
-
-  <div class="game-box">
-    <h3>Can You Make The Shot?</h3>
-    <p>Try to throw the ball into the cup!</p>
-
-    <div class="game-stage">
-      <div class="ball" id="ball">⚽</div>
-      <div class="cup">🥤</div>
+<!-- GAME -->
+<section id="game">
+    <div class="section-heading">
+        <h2>Cup Shot Challenge</h2>
+        <p>Play • Enjoy • Win</p>
     </div>
 
-    <div class="score">
-      Score: <span id="score">0</span>
-    </div>
+    <div class="game-box">
+        <h3>🏀 Cup Shot Game</h3>
+        <p>Try your luck with 5 shots!</p>
+        <p>Each successful shot earns 10 points.</p>
 
-    <div class="game-result" id="gameResult">
-      Ready for the challenge?
-    </div>
+        <p>Shots: <span id="shots">0</span> / 5</p>
+        <p>Score: <span id="score">0</span></p>
 
-    <button class="btn" id="shootBtn" onclick="shoot()">THROW BALL</button>
-    <button class="btn" onclick="resetGame()">RESET</button>
-  </div>
+        <button class="game-btn" id="shot-btn"
+                onclick="playGame()">
+            TAKE A SHOT
+        </button>
+
+        <div id="game-result">
+            Best of luck!
+        </div>
+
+        <button class="game-btn" onclick="resetGame()">
+            PLAY AGAIN
+        </button>
+    </div>
 </section>
 
-<!-- CART -->
-<section class="cart-section" id="cart">
-  <div class="heading">
-    <h2>Your Cart 🛒</h2>
-    <p>Check your selected food items.</p>
-  </div>
-
-  <div class="cart-box">
-    <div id="cartItems">Your cart is empty.</div>
-
-    <div class="cart-total">
-      Total: ৳<span id="total">0</span>
+<!-- TEAM -->
+<section id="team">
+    <div class="section-heading">
+        <h2>Meet Our Team</h2>
+        <p>The people behind Modhur Hari!</p>
     </div>
 
-    <button class="btn" onclick="checkout()">Place Order</button>
-    <button class="btn" onclick="clearCart()">Clear Cart</button>
-  </div>
-</section>
-
-<!-- TEAM MEMBERS -->
-<section class="people-section" id="team">
-  <div class="heading">
-    <h2>Meet Our Team</h2>
-    <p>The people behind Modhur Hari ❤️</p>
-  </div>
-
-  <div class="people-grid" id="teamGrid"></div>
+    <div class="people-grid" id="team-list"></div>
 </section>
 
 <!-- VOLUNTEERS -->
-<section class="volunteer-section" id="volunteers">
-  <div class="heading">
-    <h2>Our Volunteers</h2>
-    <p>Special thanks to our volunteers!</p>
-  </div>
+<section id="volunteers">
+    <div class="section-heading">
+        <h2>Our Volunteers</h2>
+        <p>Special thanks to our amazing volunteers!</p>
+    </div>
 
-  <div class="people-grid" id="volunteerGrid"></div>
+    <div class="people-grid" id="volunteer-list"></div>
+</section>
+
+<!-- CART -->
+<section id="cart">
+    <div class="section-heading">
+        <h2>Your Cart 🛒</h2>
+        <p>Your selected items</p>
+    </div>
+
+    <div class="cart-box">
+        <h3>Order Summary</h3>
+
+        <div id="cart-items">
+            Your cart is empty.
+        </div>
+
+        <div class="total">
+            Total: ৳<span id="cart-total">0</span>
+        </div>
+
+        <button class="checkout-btn" onclick="checkout()">
+            CHECKOUT
+        </button>
+    </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <h2>🍯 Modhur Hari</h2>
-  <p>South Asia Bazar 3.0</p>
-  <p>University of South Asia</p>
-  <p>Food • Fun • Memories</p>
-  <br>
-  <p>© 2026 Modhur Hari. All Rights Reserved.</p>
+    <h2>Modhur Hari</h2>
+    <p>A Little Taste of Happiness!</p>
+    <p>South Asia Bazar 3.0</p>
+    <p>University of South Asia</p>
+    <p style="margin-top:15px;">
+        © 2026 Modhur Hari. All Rights Reserved.
+    </p>
 </footer>
 
 <script>
 
-// FOOD ITEMS
+/* FOOD DATA */
 const foods = [
-  {name:"Papri Chaat",price:29,emoji:"🥗"},
-  {name:"Polao & Chicken Kofta",price:79,emoji:"🍛"},
-  {name:"American Chips Salad",price:49,emoji:"🥔"},
-  {name:"Lajuk Piyaju",price:19,emoji:"🧆"},
-  {name:"Tiramisu",price:49,emoji:"🍰"}
+    {
+        name: "Papri Chaat",
+        price: 29,
+        image: "images/papri-chaat.jpg",
+        emoji: "🥗"
+    },
+    {
+        name: "Polao & Chicken Kofta",
+        price: 79,
+        image: "images/polao-kofta.jpg",
+        emoji: "🍛"
+    },
+    {
+        name: "American Chips Salad",
+        price: 49,
+        image: "images/chips-salad.jpg",
+        emoji: "🥔"
+    },
+    {
+        name: "Lajuk Piyaju",
+        price: 19,
+        image: "images/lajuk-piyaju.jpg",
+        emoji: "🧆"
+    },
+    {
+        name: "Tiramisu",
+        price: 49,
+        image: "images/tiramisu.jpg",
+        emoji: "🍰"
+    }
 ];
 
-const foodGrid = document.getElementById("foodGrid");
+/* SHOW FOOD */
+const foodList = document.getElementById("food-list");
 
-foods.forEach((food,index) => {
-  foodGrid.innerHTML += `
-    <div class="card">
-      <div class="food-image">${food.emoji}</div>
-      <div class="card-content">
-        <h3>${food.name}</h3>
-        <div class="price">৳${food.price}/-</div>
-        <button class="btn" onclick="addToCart(${index})">
-          ADD TO CART
-        </button>
-      </div>
-    </div>
-  `;
+foods.forEach((food, index) => {
+    foodList.innerHTML += `
+        <div class="food-card">
+            <div class="food-image">
+                <img src="${food.image}"
+                     alt="${food.name}"
+                     onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+
+                <div class="food-fallback">${food.emoji}</div>
+            </div>
+
+            <div class="food-details">
+                <h3>${food.name}</h3>
+                <div class="price">৳${food.price}</div>
+                <button class="action-btn"
+                        onclick="addToCart(${index})">
+                    ADD TO CART
+                </button>
+            </div>
+        </div>
+    `;
 });
 
-// TEAM MEMBERS
-const members = [
-  ["Moutushi Sultana","8th","242-0375-001","moutushi.jpg"],
-  ["Sahariya Sultana Eva","1st","263-0352-001","sahariya.jpg"],
-  ["Sham Sundar Ghosh","2nd","262-0330-001","sham.jpg"],
-  ["Md Radi Islam Rafi","2nd","262-0451-001","rafi.jpg"],
-  ["Md. Didar Ahmmed Sajon","4th","253-0407-001","sajon.jpg"],
-  ["Md Moniruzzaman Hridoy","2nd","262-0132-001","hridoy.jpg"],
-  ["Sheikh Rakibul Hassan","2nd","262-0198-001","rakibul.jpg"],
-  ["Rashidul Islam","1st","262-0102-001","rashidul.jpg"],
-  ["Sanjida Akter Happy","1st","263-0483-001","happy.jpg"],
-  ["Shumona Sumu","1st","263-0002-001","sumu.jpg"]
+/* TEAM DATA */
+const team = [
+    {name:"Moutushi Sultana", semester:"8th", photo:"moutushi.jpg"},
+    {name:"Sahariya Sultana Eva", semester:"1st", photo:"sahariya.jpg"},
+    {name:"Sham Sundar Ghosh", semester:"2nd", photo:"sham.jpg"},
+    {name:"Md Radi Islam Rafi", semester:"2nd", photo:"rafi.jpg"},
+    {name:"Md. Didar Ahmmed Sajon", semester:"4th", photo:"sajon.jpg"},
+    {name:"Md Moniruzzaman Hridoy", semester:"2nd", photo:"hridoy.jpg"},
+    {name:"Sheikh Rakibul Hassan", semester:"2nd", photo:"rakibul.jpg"},
+    {name:"Rashidul Islam", semester:"1st", photo:"rashidul.jpg"},
+    {name:"Sanjida Akter Happy", semester:"1st", photo:"happy.jpg"},
+    {name:"Shumona Sumu", semester:"1st", photo:"sumu.jpg"}
 ];
 
-// VOLUNTEERS
+/* VOLUNTEERS DATA */
 const volunteers = [
-  ["Azwa Abbas Nuha","242-0399-005","azwa.jpg"],
-  ["Maimuna Binte Azad","262-0032-004","maimuna.jpg"]
+    {name:"Azwa Abbas Nuha", photo:"azwa.jpg"},
+    {name:"Maimuna Binte Azad", photo:"maimuna.jpg"}
 ];
 
-// INITIALS
-function initials(name) {
-  return name.split(" ").slice(0,2)
-    .map(word=>word[0]).join("").toUpperCase();
+/* SHOW PEOPLE */
+function showPeople(list, containerId) {
+    const container = document.getElementById(containerId);
+
+    list.forEach(person => {
+        const initials = person.name
+            .split(" ")
+            .map(word => word[0])
+            .join("")
+            .substring(0, 2);
+
+        container.innerHTML += `
+            <div class="person-card">
+                <div class="person-photo">
+                    <img src="images/${person.photo}"
+                         alt="${person.name}"
+                         onerror="this.style.display='none';this.parentElement.innerHTML='${initials}';">
+                </div>
+
+                <h3>${person.name}</h3>
+
+                ${person.semester ?
+                    `<p>${person.semester} Semester</p>` :
+                    `<p>Volunteer</p>`
+                }
+            </div>
+        `;
+    });
 }
 
-// PERSON CARD
-function personCard(name,semester,id,photo,index) {
-  return `
-    <div class="person-card">
-      <div class="person-number">MEMBER ${index+1}</div>
-      <div class="person-photo">
-        <img src="images/${photo}"
-          alt="${name}"
-          onerror="this.style.display='none'">
-        <span>${initials(name)}</span>
-      </div>
-      <h3>${name}</h3>
-      ${semester ? `<p>Semester: ${semester}</p>` : ""}
-      <p>Student ID: ${id}</p>
-    </div>
-  `;
-}
+showPeople(team, "team-list");
+showPeople(volunteers, "volunteer-list");
 
-// RENDER TEAM
-document.getElementById("teamGrid").innerHTML =
-members.map((m,i)=>personCard(m[0],m[1],m[2],m[3],i)).join("");
-
-// RENDER VOLUNTEERS
-document.getElementById("volunteerGrid").innerHTML =
-volunteers.map((v,i)=>personCard(v[0],"",v[1],v[2],i)).join("");
-
-// SHOPPING CART
+/* CART */
 let cart = [];
 
 function addToCart(index) {
-  const food = foods[index];
-  cart.push({...food});
-  updateCart();
+    const food = foods[index];
+
+    const existing = cart.find(item => item.name === food.name);
+
+    if (existing) {
+        existing.quantity++;
+    } else {
+        cart.push({
+            name: food.name,
+            price: food.price,
+            quantity: 1
+        });
+    }
+
+    updateCart();
 }
 
-function removeItem(index) {
-  cart.splice(index,1);
-  updateCart();
+function removeFromCart(index) {
+    cart[index].quantity--;
+
+    if (cart[index].quantity <= 0) {
+        cart.splice(index, 1);
+    }
+
+    updateCart();
 }
 
 function updateCart() {
-  const container = document.getElementById("cartItems");
+    const cartItems = document.getElementById("cart-items");
+    const totalElement = document.getElementById("cart-total");
 
-  if(cart.length===0) {
-    container.innerHTML="Your cart is empty.";
-  } else {
-    container.innerHTML=cart.map((item,index)=>`
-      <div class="cart-row">
-        <span>${item.name}</span>
-        <span>
-          ৳${item.price}
-          <button class="remove" onclick="removeItem(${index})">✖</button>
-        </span>
-      </div>
-    `).join("");
-  }
+    if (cart.length === 0) {
+        cartItems.innerHTML = "Your cart is empty.";
+        totalElement.textContent = 0;
+        return;
+    }
 
-  const total = cart.reduce((sum,item)=>sum+item.price,0);
-  document.getElementById("total").innerText=total;
-}
+    let total = 0;
+    cartItems.innerHTML = "";
 
-function clearCart() {
-  cart=[];
-  updateCart();
+    cart.forEach((item, index) => {
+        const subtotal = item.price * item.quantity;
+        total += subtotal;
+
+        cartItems.innerHTML += `
+            <div class="cart-item">
+                <div>
+                    <strong>${item.name}</strong>
+                    <p>৳${item.price} × ${item.quantity} = ৳${subtotal}</p>
+                </div>
+
+                <button class="remove-btn"
+                        onclick="removeFromCart(${index})">
+                    Remove
+                </button>
+            </div>
+        `;
+    });
+
+    totalElement.textContent = total;
 }
 
 function checkout() {
-  if(cart.length===0) {
-    alert("Your cart is empty!");
-    return;
-  }
+    if (cart.length === 0) {
+        alert("Your cart is empty!");
+        return;
+    }
 
-  let message="MODHUR HARI ORDER\n\n";
+    let message = "Your Order Summary:\n\n";
+    let total = 0;
 
-  cart.forEach(item=>{
-    message+=item.name+" - ৳"+item.price+"\n";
-  });
+    cart.forEach(item => {
+        const subtotal = item.price * item.quantity;
+        message += `${item.name} × ${item.quantity} = ৳${subtotal}\n`;
+        total += subtotal;
+    });
 
-  const total=cart.reduce((sum,item)=>sum+item.price,0);
-  message+="\nTotal Bill: ৳"+total;
-  message+="\n\nPlease visit our stall to complete your order.";
+    message += `\nTotal Bill: ৳${total}`;
+    message += "\n\nPlease visit the Modhur Hari Stall to complete your order.";
 
-  alert(message);
+    alert(message);
 }
 
-// CUP SHOT GAME
-let score=0;
-let shots=0;
-let busy=false;
+/* CUP SHOT GAME */
+let shots = 0;
+let score = 0;
 
-function shoot() {
-  if(busy) return;
+function playGame() {
+    if (shots >= 5) {
+        return;
+    }
 
-  if(shots>=5) {
-    document.getElementById("gameResult").innerText=
-      "Game Over! Press RESET to play again.";
-    return;
-  }
+    shots++;
 
-  busy=true;
-  shots++;
+    const success = Math.random() < 0.5;
 
-  const ball=document.getElementById("ball");
-  const result=document.getElementById("gameResult");
-  const btn=document.getElementById("shootBtn");
-
-  btn.disabled=true;
-  ball.classList.add("shoot");
-
-  setTimeout(()=>{
-    const success=Math.random()<0.5;
-
-    if(success) {
-      score+=10;
-      result.innerText="🎉 Excellent Shot! +10 Points";
+    if (success) {
+        score += 10;
+        document.getElementById("game-result").textContent =
+            "🎉 Great Shot! You scored 10 points!";
     } else {
-      result.innerText="😃 Missed! Try Again!";
+        document.getElementById("game-result").textContent =
+            "Missed! Try the next shot.";
     }
 
-    document.getElementById("score").innerText=score;
+    document.getElementById("shots").textContent = shots;
+    document.getElementById("score").textContent = score;
 
-    ball.classList.remove("shoot");
-    ball.style.left="20px";
-    busy=false;
-    btn.disabled=false;
-
-    if(shots===5) {
-      result.innerText+=` Final Score: ${score}/50`;
+    if (shots === 5) {
+        document.getElementById("game-result").textContent +=
+            " Game Over! Final Score: " + score;
+        document.getElementById("shot-btn").disabled = true;
     }
-  },800);
 }
 
 function resetGame() {
-  score=0;
-  shots=0;
-  busy=false;
+    shots = 0;
+    score = 0;
 
-  document.getElementById("score").innerText=0;
-  document.getElementById("gameResult").innerText=
-    "Ready for the challenge?";
-  document.getElementById("ball").classList.remove("shoot");
-  document.getElementById("shootBtn").disabled=false;
+    document.getElementById("shots").textContent = 0;
+    document.getElementById("score").textContent = 0;
+    document.getElementById("game-result").textContent = "Best of luck!";
+    document.getElementById("shot-btn").disabled = false;
 }
 
 </script>
+
 </body>
 </html>
