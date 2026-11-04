@@ -38,15 +38,23 @@ nav a {color:white;text-decoration:none;font-size:14px}
 nav a:hover {color:var(--gold)}
 
 .hero {
-  min-height:440px;
-  background:linear-gradient(120deg,#43251b,#9b5531);
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  color:white;
-  padding:50px 20px;
+    background:
+    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.55)),
+    url("images/cover.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 50px 20px;
+}
 }
 .hero .tag {
   color:var(--gold);
