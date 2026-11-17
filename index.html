@@ -16,88 +16,123 @@
 }
 
 body {
-    background: #fffdf8;
+    background: #fffaf5;
     color: #333;
 }
 
-/* HEADER */
+/* TOP HEADER */
 header {
-    background: #71301f;
-    color: white;
-    min-height: 75px;
-    padding: 8px 5%;
+    background: #ffffff;
+    color: #333333;
+    padding: 12px 5% 10px;
+    border-bottom: 4px solid #f58220;
+}
+.brand-row {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 15px;
-    flex-wrap: wrap;
+    gap: 16px;
 }
-
+.brand-copy {
+    min-width: 0;
+}
+.brand-copy h1 {
+    color: #e96b10;
+    font-size: 38px;
+    line-height: 1.1;
+    margin-bottom: 7px;
+}
+.brand-headline {
+    color: #555555;
+    font-size: 15px;
+    font-weight: 700;
+}
+.stall-label {
+    display: inline-block;
+    margin-left: 8px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    background: #f58220;
+    color: #ffffff;
+    font-size: 12px;
+    vertical-align: middle;
+}
 .logo {
     display: flex;
     align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
 }
-
 .logo img {
-    width: 65px;
-    height: 58px;
+    width: 76px;
+    height: 68px;
     object-fit: contain;
     display: block;
 }
-
 nav {
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 18px;
+    margin-top: 13px;
 }
-
 nav a {
-    color: white;
+    color: #a84b08;
     text-decoration: none;
     font-size: 14px;
     font-weight: bold;
 }
-
 nav a:hover {
-    color: #ffd77b;
+    color: #f58220;
 }
 
-/* HERO */
+/* COVER IMAGE STRIP — original uploaded image ratio: 2048 × 683 */
+.cover-strip {
+    width: 100%;
+    aspect-ratio: 2048 / 683;
+    max-height: 230px;
+    min-height: 90px;
+    overflow: hidden;
+    background: #fff0e2;
+}
+.cover-strip img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* HOME INTRO */
 .hero {
-    min-height: 400px;
-    background: linear-gradient(135deg, #8b4513, #d4a017);
+    min-height: 125px;
+    background: #fff7ef;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: white;
-    padding: 50px 20px;
+    color: #c85b0b;
+    padding: 22px 20px;
 }
-
 .hero .tag {
-    font-size: 14px;
-    margin-bottom: 20px;
-}
-
-.hero h1 {
-    font-size: 52px;
-    margin-bottom: 15px;
-}
-
-.hero p {
-    font-size: 17px;
+    color: #e96b10;
+    font-size: 13px;
+    font-weight: bold;
     margin-bottom: 10px;
 }
-
+.hero p {
+    font-size: 15px;
+    margin-bottom: 5px;
+}
 .main-btn {
     display: inline-block;
-    margin-top: 20px;
-    background: #ffda8a;
-    color: #71301f;
-    padding: 13px 25px;
-    border-radius: 30px;
+    margin-top: 12px;
+    background: #f58220;
+    color: #ffffff;
+    padding: 11px 22px;
+    border-radius: 25px;
     text-decoration: none;
     font-weight: bold;
 }
@@ -109,13 +144,13 @@ nav a:hover {
     flex-wrap: wrap;
     gap: 60px;
     padding: 25px 15px;
-    background: #fff7e8;
+    background: #fff7ef;
     text-align: center;
 }
 
 .event-info h4 {
     font-size: 13px;
-    color: #71301f;
+    color: #c85b0b;
     margin-bottom: 5px;
 }
 
@@ -135,7 +170,7 @@ section {
 
 .section-heading h2 {
     font-size: 30px;
-    color: #71301f;
+    color: #c85b0b;
     margin-bottom: 10px;
 }
 
@@ -166,7 +201,7 @@ section {
 
 .food-image {
     height: 180px;
-    background: #fff3df;
+    background: #fff0e2;
     position: relative;
     display: flex;
     align-items: center;
@@ -194,13 +229,13 @@ section {
 }
 
 .price {
-    color: #9b4a22;
+    color: #e96b10;
     font-weight: bold;
     margin-bottom: 12px;
 }
 
 .action-btn {
-    background: #71301f;
+    background: #c85b0b;
     color: white;
     border: none;
     padding: 10px 18px;
@@ -209,7 +244,7 @@ section {
 }
 
 .action-btn:hover {
-    background: #a65a27;
+    background: #d96b16;
 }
 
 /* PRODUCT */
@@ -225,7 +260,7 @@ section {
 
 .product-image {
     height: 190px;
-    background: #fff3df;
+    background: #fff0e2;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -245,18 +280,66 @@ section {
     display: none;
 }
 
+/* CUP SHOT IMAGE */
+.game-photo {
+    width: 100%;
+    height: 155px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #fff0e2;
+}
+.game-photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.game-photo-fallback {
+    display: none;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    color: #c85b0b;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* COORDINATOR */
+.coordinator-card {
+    max-width: 540px;
+    margin: 0 auto;
+    padding: 25px 20px;
+    text-align: center;
+    background: #fff3e8;
+    border: 1px solid #ffd4b0;
+    border-top: 4px solid #f58220;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+}
+.coordinator-card h3 {
+    color: #c85b0b;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.coordinator-card p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
 /* GAME */
 .game-box {
     max-width: 500px;
     margin: auto;
-    background: #fff5e5;
+    background: #fff3e8;
     padding: 30px;
     border-radius: 15px;
     text-align: center;
 }
 
 .game-box h3 {
-    color: #71301f;
+    color: #c85b0b;
     margin-bottom: 15px;
 }
 
@@ -265,7 +348,7 @@ section {
 }
 
 .game-btn {
-    background: #71301f;
+    background: #c85b0b;
     color: white;
     border: none;
     padding: 12px 25px;
@@ -305,7 +388,7 @@ section {
     align-items: center;
     justify-content: center;
     font-size: 32px;
-    color: #71301f;
+    color: #c85b0b;
 }
 
 .person-photo img {
@@ -329,12 +412,12 @@ section {
     max-width: 650px;
     margin: auto;
     padding: 25px;
-    background: #fff5e5;
+    background: #fff3e8;
     border-radius: 12px;
 }
 
 .cart-box h3 {
-    color: #71301f;
+    color: #c85b0b;
     margin-bottom: 15px;
 }
 
@@ -360,14 +443,14 @@ section {
     font-size: 20px;
     font-weight: bold;
     margin-top: 20px;
-    color: #71301f;
+    color: #c85b0b;
 }
 
 .checkout-btn {
     width: 100%;
     padding: 13px;
     margin-top: 18px;
-    background: #71301f;
+    background: #c85b0b;
     color: white;
     border: none;
     border-radius: 25px;
@@ -376,7 +459,7 @@ section {
 
 /* FOOTER */
 footer {
-    background: #71301f;
+    background: #c85b0b;
     color: white;
     text-align: center;
     padding: 30px 15px;
@@ -394,9 +477,27 @@ footer p {
 /* MOBILE */
 @media(max-width: 600px) {
     header {
-        justify-content: center;
+        padding: 11px 4%;
     }
-
+    .brand-copy h1 {
+        font-size: 29px;
+    }
+    .brand-headline {
+        font-size: 11px;
+    }
+    .stall-label {
+        font-size: 10px;
+        padding: 3px 7px;
+        margin-left: 3px;
+    }
+    .logo img {
+        width: 58px;
+        height: 52px;
+    }
+    .cover-strip {
+        min-height: 0;
+        max-height: 120px;
+    }
     nav {
         justify-content: center;
         gap: 12px;
@@ -431,11 +532,19 @@ footer p {
 
 <body>
 
-<!-- HEADER -->
-<header>
-    <div class="logo">
-        <img src="images/logo.png.png"
-             alt="Modhur Hari Logo">
+<!-- TOP HEADER -->
+<header id="home">
+    <div class="brand-row">
+        <div class="brand-copy">
+            <h1>Modhur Hari</h1>
+            <div class="brand-headline">
+                A Little Taste of Happiness!
+                <span class="stall-label">STALL: 08</span>
+            </div>
+        </div>
+        <div class="logo">
+            <img src="images/logo.png.png" alt="Modhur Hari Logo">
+        </div>
     </div>
 
     <nav>
@@ -445,15 +554,19 @@ footer p {
         <a href="#game">Game</a>
         <a href="#team">Our Team</a>
         <a href="#volunteers">Volunteers</a>
+        <a href="#coordinator">Coordinator</a>
         <a href="#cart">Cart 🛒</a>
     </nav>
 </header>
 
-<!-- HOME -->
-<div class="hero" id="home">
+<!-- THIN COVER PHOTO -->
+<div class="cover-strip">
+    <img src="images/cover-banner.png" alt="Modhur Hari and University of South Asia cover">
+</div>
+
+<!-- HOME INTRO -->
+<div class="hero">
     <div class="tag">SOUTH ASIA BAZAR 3.0</div>
-    <h1>Modhur Hari</h1>
-    <p>A Little Taste of Happiness!</p>
     <p>Food • Fun • Memories</p>
     <a href="#food" class="main-btn">EXPLORE OUR STALL</a>
 </div>
@@ -517,6 +630,12 @@ footer p {
     </div>
 
     <div class="game-box">
+        <div class="game-photo">
+            <img src="images/cup-shot.jpg"
+                 alt="Cup Shot Game illustration"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="game-photo-fallback">🏀 Cup Shot Challenge</div>
+        </div>
         <h3>🏀 Cup Shot Game</h3>
         <p>Try your luck with 5 shots!</p>
         <p>Each successful shot earns 10 points.</p>
@@ -557,6 +676,18 @@ footer p {
     </div>
 
     <div class="people-grid" id="volunteer-list"></div>
+</section>
+
+<!-- COORDINATOR -->
+<section id="coordinator">
+    <div class="section-heading">
+        <h2>Our Coordinator</h2>
+        <p>South Asia Bazar 3.0</p>
+    </div>
+    <div class="coordinator-card">
+        <h3>Rawkat Noor Priata</h3>
+        <p>South Asia Bazar 3.0 Coordinator, University Of South Asia</p>
+    </div>
 </section>
 
 <!-- CART -->
