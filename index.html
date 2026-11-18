@@ -28,13 +28,26 @@ header {
     border-bottom: 4px solid #f58220;
 }
 .brand-row {
+    display: grid;
+    grid-template-columns: 88px minmax(0, 1fr) 88px;
+    align-items: center;
+    gap: 16px;
+}
+.header-logo {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 16px;
+    justify-content: center;
+    min-width: 0;
+}
+.header-logo img {
+    width: 78px;
+    height: 72px;
+    object-fit: contain;
+    display: block;
 }
 .brand-copy {
     min-width: 0;
+    text-align: center;
 }
 .brand-copy h1 {
     color: #e96b10;
@@ -474,16 +487,70 @@ footer p {
     line-height: 1.8;
 }
 
+/* DEPARTMENT MEMBER LISTS */
+.department-section { background: #fffaf5; }
+.department-card {
+    max-width: 1100px;
+    margin: 0 auto 28px;
+    background: #ffffff;
+    border: 1px solid #f4d5bd;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 3px 14px rgba(0,0,0,0.06);
+}
+.department-card h3 {
+    padding: 16px 20px;
+    color: #c85b0b;
+    background: #fff0e2;
+    border-bottom: 2px solid #f58220;
+    font-size: 20px;
+}
+.table-wrap { width: 100%; overflow-x: auto; }
+.department-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 760px;
+    font-size: 13px;
+}
+.department-table th, .department-table td {
+    padding: 12px 13px;
+    text-align: left;
+    border-bottom: 1px solid #f0e3d9;
+    white-space: nowrap;
+}
+.department-table th {
+    color: #ffffff;
+    background: #c85b0b;
+    font-weight: 700;
+}
+.department-table tbody tr:nth-child(even) { background: #fff8f2; }
+.department-table tbody tr:hover { background: #fff0e2; }
+.department-table td:first-child, .department-table th:first-child { text-align: center; }
+.department-note {
+    padding: 10px 16px;
+    color: #777;
+    font-size: 12px;
+    background: #fffaf5;
+}
+
 /* MOBILE */
 @media(max-width: 600px) {
     header {
         padding: 11px 4%;
     }
+    .brand-row {
+        grid-template-columns: 52px minmax(0, 1fr) 52px;
+        gap: 7px;
+    }
+    .header-logo img {
+        width: 48px;
+        height: 48px;
+    }
     .brand-copy h1 {
-        font-size: 29px;
+        font-size: 25px;
     }
     .brand-headline {
-        font-size: 11px;
+        font-size: 10px;
     }
     .stall-label {
         font-size: 10px;
@@ -535,6 +602,9 @@ footer p {
 <!-- TOP HEADER -->
 <header id="home">
     <div class="brand-row">
+        <div class="header-logo">
+            <img src="images/university-of-south-asia-logo.png" alt="University of South Asia Logo">
+        </div>
         <div class="brand-copy">
             <h1>Modhur Hari</h1>
             <div class="brand-headline">
@@ -542,8 +612,8 @@ footer p {
                 <span class="stall-label">STALL: 08</span>
             </div>
         </div>
-        <div class="logo">
-            <img src="images/logo.png.png" alt="Modhur Hari Logo">
+        <div class="header-logo">
+            <img src="images/south-asia-bazar-3-logo.png" alt="South Asia Bazar 3.0 Logo">
         </div>
     </div>
 
@@ -554,6 +624,7 @@ footer p {
         <a href="#game">Game</a>
         <a href="#team">Our Team</a>
         <a href="#volunteers">Volunteers</a>
+        <a href="#departments">Departments</a>
         <a href="#coordinator">Coordinator</a>
         <a href="#cart">Cart 🛒</a>
     </nav>
@@ -676,6 +747,65 @@ footer p {
     </div>
 
     <div class="people-grid" id="volunteer-list"></div>
+</section>
+
+
+<!-- DEPARTMENT MEMBER LISTS -->
+<section id="departments" class="department-section">
+    <div class="section-heading">
+        <h2>Department Members</h2>
+        <p>Our student teams for South Asia Bazar 3.0</p>
+    </div>
+
+    <div class="department-card">
+        <h3>Decoration Department</h3>
+        <div class="table-wrap">
+            <table class="department-table">
+                <thead>
+                    <tr>
+                        <th>Serial No.</th>
+                        <th>Name</th>
+                        <th>Semester</th>
+                        <th>Student ID</th>
+                        <th>Number</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td>Moutushi Sultana</td><td>8th</td><td>242-0375-001</td><td>01936888376</td></tr>
+                    <tr><td>2</td><td>Sahariya Sultana Eva</td><td>1st</td><td>263-0352-001</td><td>01326275823</td></tr>
+                    <tr><td>3</td><td>Sham Sundar Ghosh</td><td>2nd</td><td>262-0330-001</td><td>01799693345</td></tr>
+                    <tr><td>4</td><td>Md Radi Islam Rafi</td><td>2nd</td><td>262-0451-001</td><td>01857000317</td></tr>
+                    <tr><td>5</td><td>Md. Didar Ahmmed Sajon</td><td>4th</td><td>253-0407-001</td><td>01759665506</td></tr>
+                    <tr><td>6</td><td>Md Moniruzzaman Hridoy</td><td>2nd</td><td>262-0132-001</td><td>01311156901</td></tr>
+                    <tr><td>7</td><td>Sheikh Rakibul Hassan</td><td>2nd</td><td>262-0198-001</td><td>01882976372</td></tr>
+                    <tr><td>8</td><td>Rashidul Islam</td><td>1st</td><td>262-0102-001</td><td>01737204741</td></tr>
+                    <tr><td>9</td><td>Sanjida Akter Happy</td><td>1st</td><td>263-0483-001</td><td>01711035294</td></tr>
+                    <tr><td>10</td><td>Shumona Sumu</td><td>1st</td><td>263-0002-001</td><td>Not provided</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="department-note">Note: The contact number for serial no. 10 was incomplete in the supplied information.</p>
+    </div>
+
+    <div class="department-card">
+        <h3>Cultural Department</h3>
+        <div class="table-wrap">
+            <table class="department-table">
+                <thead>
+                    <tr>
+                        <th>Serial No.</th>
+                        <th>Name</th>
+                        <th>Semester</th>
+                        <th>Student ID</th>
+                        <th>Number</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td>Sanjida Akter Happy</td><td>1st</td><td>263-0483-001</td><td>01711035294</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </section>
 
 <!-- COORDINATOR -->
