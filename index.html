@@ -27,39 +27,46 @@ header {
     padding: 12px 5% 10px;
     border-bottom: 4px solid #f58220;
 }
+
 .brand-row {
     display: grid;
     grid-template-columns: 88px minmax(0, 1fr) 88px;
     align-items: center;
     gap: 16px;
 }
+
 .header-logo {
     display: flex;
     align-items: center;
     justify-content: center;
     min-width: 0;
 }
+
 .header-logo img {
     width: 78px;
     height: 72px;
     object-fit: contain;
     display: block;
 }
+
 .brand-copy {
     min-width: 0;
     text-align: center;
 }
+
 .brand-copy h1 {
     color: #e96b10;
     font-size: 38px;
     line-height: 1.1;
     margin-bottom: 7px;
 }
+
 .brand-headline {
     color: #555555;
     font-size: 15px;
     font-weight: 700;
 }
+
 .stall-label {
     display: inline-block;
     margin-left: 8px;
@@ -70,18 +77,21 @@ header {
     font-size: 12px;
     vertical-align: middle;
 }
+
 .logo {
     display: flex;
     align-items: center;
     justify-content: center;
     flex: 0 0 auto;
 }
+
 .logo img {
     width: 76px;
     height: 68px;
     object-fit: contain;
     display: block;
 }
+
 nav {
     display: flex;
     align-items: center;
@@ -90,17 +100,19 @@ nav {
     gap: 18px;
     margin-top: 13px;
 }
+
 nav a {
     color: #a84b08;
     text-decoration: none;
     font-size: 14px;
     font-weight: bold;
 }
+
 nav a:hover {
     color: #f58220;
 }
 
-/* COVER IMAGE STRIP — original uploaded image ratio: 2048 × 683 */
+/* COVER IMAGE */
 .cover-strip {
     width: 100%;
     aspect-ratio: 2048 / 683;
@@ -109,6 +121,7 @@ nav a:hover {
     overflow: hidden;
     background: #fff0e2;
 }
+
 .cover-strip img {
     display: block;
     width: 100%;
@@ -129,16 +142,19 @@ nav a:hover {
     color: #c85b0b;
     padding: 22px 20px;
 }
+
 .hero .tag {
     color: #e96b10;
     font-size: 13px;
     font-weight: bold;
     margin-bottom: 10px;
 }
+
 .hero p {
     font-size: 15px;
     margin-bottom: 5px;
 }
+
 .main-btn {
     display: inline-block;
     margin-top: 12px;
@@ -302,12 +318,14 @@ section {
     border-radius: 10px;
     background: #fff0e2;
 }
+
 .game-photo img {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: contain;
 }
+
 .game-photo-fallback {
     display: none;
     height: 100%;
@@ -330,11 +348,13 @@ section {
     border-radius: 12px;
     box-shadow: 0 3px 12px rgba(0,0,0,0.06);
 }
+
 .coordinator-card h3 {
     color: #c85b0b;
     font-size: 20px;
     margin-bottom: 10px;
 }
+
 .coordinator-card p {
     color: #666;
     font-size: 14px;
@@ -420,6 +440,27 @@ section {
     font-size: 13px;
 }
 
+/* WEBSITE CREATOR HIGHLIGHT */
+.person-card.website-creator .person-photo {
+    background: #f58220;
+    color: #ffffff;
+}
+
+.person-card.website-creator {
+    border: 1px solid #ffd0a8;
+}
+
+.creator-badge {
+    display: inline-block;
+    background: #fff0e2;
+    color: #e96b10 !important;
+    font-weight: bold;
+    font-size: 12px !important;
+    padding: 6px 12px;
+    border-radius: 20px;
+    margin: 0 0 10px;
+}
+
 /* CART */
 .cart-box {
     max-width: 650px;
@@ -488,7 +529,10 @@ footer p {
 }
 
 /* DEPARTMENT MEMBER LISTS */
-.department-section { background: #fffaf5; }
+.department-section {
+    background: #fffaf5;
+}
+
 .department-card {
     max-width: 1100px;
     margin: 0 auto 28px;
@@ -498,6 +542,7 @@ footer p {
     overflow: hidden;
     box-shadow: 0 3px 14px rgba(0,0,0,0.06);
 }
+
 .department-card h3 {
     padding: 16px 20px;
     color: #c85b0b;
@@ -505,27 +550,46 @@ footer p {
     border-bottom: 2px solid #f58220;
     font-size: 20px;
 }
-.table-wrap { width: 100%; overflow-x: auto; }
+
+.table-wrap {
+    width: 100%;
+    overflow-x: auto;
+}
+
 .department-table {
     width: 100%;
     border-collapse: collapse;
     min-width: 760px;
     font-size: 13px;
 }
-.department-table th, .department-table td {
+
+.department-table th,
+.department-table td {
     padding: 12px 13px;
     text-align: left;
     border-bottom: 1px solid #f0e3d9;
     white-space: nowrap;
 }
+
 .department-table th {
     color: #ffffff;
     background: #c85b0b;
     font-weight: 700;
 }
-.department-table tbody tr:nth-child(even) { background: #fff8f2; }
-.department-table tbody tr:hover { background: #fff0e2; }
-.department-table td:first-child, .department-table th:first-child { text-align: center; }
+
+.department-table tbody tr:nth-child(even) {
+    background: #fff8f2;
+}
+
+.department-table tbody tr:hover {
+    background: #fff0e2;
+}
+
+.department-table td:first-child,
+.department-table th:first-child {
+    text-align: center;
+}
+
 .department-note {
     padding: 10px 16px;
     color: #777;
@@ -535,36 +599,45 @@ footer p {
 
 /* MOBILE */
 @media(max-width: 600px) {
+
     header {
         padding: 11px 4%;
     }
+
     .brand-row {
         grid-template-columns: 52px minmax(0, 1fr) 52px;
         gap: 7px;
     }
+
     .header-logo img {
         width: 48px;
         height: 48px;
     }
+
     .brand-copy h1 {
         font-size: 25px;
     }
+
     .brand-headline {
         font-size: 10px;
     }
+
     .stall-label {
         font-size: 10px;
         padding: 3px 7px;
         margin-left: 3px;
     }
+
     .logo img {
         width: 58px;
         height: 52px;
     }
+
     .cover-strip {
         min-height: 0;
         max-height: 120px;
     }
+
     nav {
         justify-content: center;
         gap: 12px;
@@ -602,9 +675,12 @@ footer p {
 <!-- TOP HEADER -->
 <header id="home">
     <div class="brand-row">
+
         <div class="header-logo">
-            <img src="images/university-of-south-asia-logo.png" alt="University of South Asia Logo">
+            <img src="images/university-of-south-asia-logo.png"
+                 alt="University of South Asia Logo">
         </div>
+
         <div class="brand-copy">
             <h1>Modhur Hari</h1>
             <div class="brand-headline">
@@ -612,9 +688,12 @@ footer p {
                 <span class="stall-label">STALL: 08</span>
             </div>
         </div>
+
         <div class="header-logo">
-            <img src="images/south-asia-bazar-3-logo.png" alt="South Asia Bazar 3.0 Logo">
+            <img src="images/south-asia-bazar-3-logo.png"
+                 alt="South Asia Bazar 3.0 Logo">
         </div>
+
     </div>
 
     <nav>
@@ -630,9 +709,10 @@ footer p {
     </nav>
 </header>
 
-<!-- THIN COVER PHOTO -->
+<!-- COVER PHOTO -->
 <div class="cover-strip">
-    <img src="images/cover-banner.png" alt="Modhur Hari and University of South Asia cover">
+    <img src="images/cover-banner.png"
+         alt="Modhur Hari and University of South Asia cover">
 </div>
 
 <!-- HOME INTRO -->
@@ -644,6 +724,7 @@ footer p {
 
 <!-- EVENT INFO -->
 <div class="event-info">
+
     <div>
         <h4>EVENT</h4>
         <p>South Asia Bazar 3.0</p>
@@ -658,63 +739,80 @@ footer p {
         <h4>STALL</h4>
         <p>Modhur Hari</p>
     </div>
+
 </div>
 
 <!-- FOOD MENU -->
 <section id="food">
+
     <div class="section-heading">
         <h2>Our Food Menu</h2>
         <p>Delicious food, unforgettable moments!</p>
     </div>
 
     <div class="food-grid" id="food-list"></div>
+
 </section>
 
 <!-- PRODUCT -->
 <section id="product">
+
     <div class="section-heading">
         <h2>Our Special Product</h2>
         <p>Something special from Modhur Hari!</p>
     </div>
 
     <div class="product-box">
+
         <div class="product-image">
             <img src="images/keyring.jpg"
                  alt="Modhur Hari Keyring"
                  onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+
             <div class="product-fallback">🔑</div>
         </div>
 
         <h3>Modhur Hari Keyring</h3>
+
         <p style="margin:12px 0;color:#777;">
             A little memory to take home!
         </p>
+
         <p class="price">Available at Stall</p>
+
     </div>
 </section>
 
 <!-- GAME -->
 <section id="game">
+
     <div class="section-heading">
         <h2>Cup Shot Challenge</h2>
         <p>Play • Enjoy • Win</p>
     </div>
 
     <div class="game-box">
+
         <div class="game-photo">
             <img src="images/cup-shot.jpg"
                  alt="Cup Shot Game illustration"
                  onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-            <div class="game-photo-fallback">🏀 Cup Shot Challenge</div>
+
+            <div class="game-photo-fallback">
+                🏀 Cup Shot Challenge
+            </div>
         </div>
+
         <h3>🏀 Cup Shot Game</h3>
+
         <p>Try your luck with 5 shots!</p>
         <p>Each successful shot earns 10 points.</p>
 
         <p>Shots: <span id="shots">0</span> / 5</p>
         <p>Score: <span id="score">0</span></p>
 
-        <button class="game-btn" id="shot-btn"
+        <button class="game-btn"
+                id="shot-btn"
                 onclick="playGame()">
             TAKE A SHOT
         </button>
@@ -726,41 +824,50 @@ footer p {
         <button class="game-btn" onclick="resetGame()">
             PLAY AGAIN
         </button>
+
     </div>
 </section>
 
 <!-- TEAM -->
 <section id="team">
+
     <div class="section-heading">
         <h2>Meet Our Team</h2>
         <p>The people behind Modhur Hari!</p>
     </div>
 
     <div class="people-grid" id="team-list"></div>
+
 </section>
 
 <!-- VOLUNTEERS -->
 <section id="volunteers">
+
     <div class="section-heading">
         <h2>Our Volunteers</h2>
         <p>Special thanks to our amazing volunteers!</p>
     </div>
 
     <div class="people-grid" id="volunteer-list"></div>
-</section>
 
+</section>
 
 <!-- DEPARTMENT MEMBER LISTS -->
 <section id="departments" class="department-section">
+
     <div class="section-heading">
         <h2>Department Members</h2>
         <p>Our student teams for South Asia Bazar 3.0</p>
     </div>
 
+    <!-- DECORATION -->
     <div class="department-card">
+
         <h3>Decoration Department</h3>
+
         <div class="table-wrap">
             <table class="department-table">
+
                 <thead>
                     <tr>
                         <th>Serial No.</th>
@@ -770,6 +877,7 @@ footer p {
                         <th>Number</th>
                     </tr>
                 </thead>
+
                 <tbody>
                     <tr><td>1</td><td>Moutushi Sultana</td><td>8th</td><td>242-0375-001</td><td>01936888376</td></tr>
                     <tr><td>2</td><td>Sahariya Sultana Eva</td><td>1st</td><td>263-0352-001</td><td>01326275823</td></tr>
@@ -782,15 +890,24 @@ footer p {
                     <tr><td>9</td><td>Sanjida Akter Happy</td><td>1st</td><td>263-0483-001</td><td>01711035294</td></tr>
                     <tr><td>10</td><td>Shumona Sumu</td><td>1st</td><td>263-0002-001</td><td>Not provided</td></tr>
                 </tbody>
+
             </table>
         </div>
-        <p class="department-note">Note: The contact number for serial no. 10 was incomplete in the supplied information.</p>
+
+        <p class="department-note">
+            Note: The contact number for serial no. 10 was incomplete in the supplied information.
+        </p>
+
     </div>
 
+    <!-- CULTURAL -->
     <div class="department-card">
+
         <h3>Cultural Department</h3>
+
         <div class="table-wrap">
             <table class="department-table">
+
                 <thead>
                     <tr>
                         <th>Serial No.</th>
@@ -800,34 +917,52 @@ footer p {
                         <th>Number</th>
                     </tr>
                 </thead>
+
                 <tbody>
-                    <tr><td>1</td><td>Sanjida Akter Happy</td><td>1st</td><td>263-0483-001</td><td>01711035294</td></tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Sanjida Akter Happy</td>
+                        <td>1st</td>
+                        <td>263-0483-001</td>
+                        <td>01711035294</td>
+                    </tr>
                 </tbody>
+
             </table>
         </div>
+
     </div>
+
 </section>
 
 <!-- COORDINATOR -->
 <section id="coordinator">
+
     <div class="section-heading">
         <h2>Our Coordinator</h2>
         <p>South Asia Bazar 3.0</p>
     </div>
+
     <div class="coordinator-card">
         <h3>Rawkat Noor Priata</h3>
-        <p>South Asia Bazar 3.0 Coordinator, University Of South Asia</p>
+        <p>
+            South Asia Bazar 3.0 Coordinator,
+            University Of South Asia
+        </p>
     </div>
+
 </section>
 
 <!-- CART -->
 <section id="cart">
+
     <div class="section-heading">
         <h2>Your Cart 🛒</h2>
         <p>Your selected items</p>
     </div>
 
     <div class="cart-box">
+
         <h3>Order Summary</h3>
 
         <div id="cart-items">
@@ -841,18 +976,23 @@ footer p {
         <button class="checkout-btn" onclick="checkout()">
             CHECKOUT
         </button>
+
     </div>
+
 </section>
 
 <!-- FOOTER -->
 <footer>
+
     <h2>Modhur Hari</h2>
     <p>A Little Taste of Happiness!</p>
     <p>South Asia Bazar 3.0</p>
     <p>University of South Asia</p>
+
     <p style="margin-top:15px;">
         © 2026 Modhur Hari. All Rights Reserved.
     </p>
+
 </footer>
 
 <script>
@@ -895,23 +1035,35 @@ const foods = [
 const foodList = document.getElementById("food-list");
 
 foods.forEach((food, index) => {
+
     foodList.innerHTML += `
         <div class="food-card">
+
             <div class="food-image">
+
                 <img src="${food.image}"
                      alt="${food.name}"
                      onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
 
-                <div class="food-fallback">${food.emoji}</div>
+                <div class="food-fallback">
+                    ${food.emoji}
+                </div>
+
             </div>
 
             <div class="food-details">
+
                 <h3>${food.name}</h3>
-                <div class="price">৳${food.price}</div>
+
+                <div class="price">
+                    ৳${food.price}
+                </div>
+
                 <button class="action-btn"
                         onclick="addToCart(${index})">
                     ADD TO CART
                 </button>
+
             </div>
         </div>
     `;
@@ -939,29 +1091,44 @@ const volunteers = [
 
 /* SHOW PEOPLE */
 function showPeople(list, containerId) {
+
     const container = document.getElementById(containerId);
 
     list.forEach(person => {
+
         const initials = person.name
             .split(" ")
             .map(word => word[0])
             .join("")
             .substring(0, 2);
 
+        const isCreator =
+            person.name === "Md Radi Islam Rafi";
+
         container.innerHTML += `
-            <div class="person-card">
+            <div class="person-card ${isCreator ? 'website-creator' : ''}">
+
                 <div class="person-photo">
+
                     <img src="images/${person.photo}"
                          alt="${person.name}"
                          onerror="this.style.display='none';this.parentElement.innerHTML='${initials}';">
+
                 </div>
 
                 <h3>${person.name}</h3>
+
+                ${isCreator ? `
+                    <p class="creator-badge">
+                        ✦ Website Creator
+                    </p>
+                ` : ''}
 
                 ${person.semester ?
                     `<p>${person.semester} Semester</p>` :
                     `<p>Volunteer</p>`
                 }
+
             </div>
         `;
     });
@@ -974,9 +1141,12 @@ showPeople(volunteers, "volunteer-list");
 let cart = [];
 
 function addToCart(index) {
+
     const food = foods[index];
 
-    const existing = cart.find(item => item.name === food.name);
+    const existing = cart.find(
+        item => item.name === food.name
+    );
 
     if (existing) {
         existing.quantity++;
@@ -992,6 +1162,7 @@ function addToCart(index) {
 }
 
 function removeFromCart(index) {
+
     cart[index].quantity--;
 
     if (cart[index].quantity <= 0) {
@@ -1002,6 +1173,7 @@ function removeFromCart(index) {
 }
 
 function updateCart() {
+
     const cartItems = document.getElementById("cart-items");
     const totalElement = document.getElementById("cart-total");
 
@@ -1015,11 +1187,14 @@ function updateCart() {
     cartItems.innerHTML = "";
 
     cart.forEach((item, index) => {
+
         const subtotal = item.price * item.quantity;
+
         total += subtotal;
 
         cartItems.innerHTML += `
             <div class="cart-item">
+
                 <div>
                     <strong>${item.name}</strong>
                     <p>৳${item.price} × ${item.quantity} = ৳${subtotal}</p>
@@ -1029,6 +1204,7 @@ function updateCart() {
                         onclick="removeFromCart(${index})">
                     Remove
                 </button>
+
             </div>
         `;
     });
@@ -1037,6 +1213,7 @@ function updateCart() {
 }
 
 function checkout() {
+
     if (cart.length === 0) {
         alert("Your cart is empty!");
         return;
@@ -1046,12 +1223,16 @@ function checkout() {
     let total = 0;
 
     cart.forEach(item => {
+
         const subtotal = item.price * item.quantity;
+
         message += `${item.name} × ${item.quantity} = ৳${subtotal}\n`;
+
         total += subtotal;
     });
 
     message += `\nTotal Bill: ৳${total}`;
+
     message += "\n\nPlease visit the Modhur Hari Stall to complete your order.";
 
     alert(message);
@@ -1062,6 +1243,7 @@ let shots = 0;
 let score = 0;
 
 function playGame() {
+
     if (shots >= 5) {
         return;
     }
@@ -1071,10 +1253,14 @@ function playGame() {
     const success = Math.random() < 0.5;
 
     if (success) {
+
         score += 10;
+
         document.getElementById("game-result").textContent =
             "🎉 Great Shot! You scored 10 points!";
+
     } else {
+
         document.getElementById("game-result").textContent =
             "Missed! Try the next shot.";
     }
@@ -1083,19 +1269,25 @@ function playGame() {
     document.getElementById("score").textContent = score;
 
     if (shots === 5) {
+
         document.getElementById("game-result").textContent +=
             " Game Over! Final Score: " + score;
+
         document.getElementById("shot-btn").disabled = true;
     }
 }
 
 function resetGame() {
+
     shots = 0;
     score = 0;
 
     document.getElementById("shots").textContent = 0;
     document.getElementById("score").textContent = 0;
-    document.getElementById("game-result").textContent = "Best of luck!";
+
+    document.getElementById("game-result").textContent =
+        "Best of luck!";
+
     document.getElementById("shot-btn").disabled = false;
 }
 
