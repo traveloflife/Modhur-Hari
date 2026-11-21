@@ -440,14 +440,22 @@ section {
     font-size: 13px;
 }
 
+/* STUDENT ID */
+.student-id {
+    font-size: 12px !important;
+    color: #888 !important;
+    margin-top: 5px;
+    letter-spacing: 0.3px;
+}
+
 /* WEBSITE CREATOR HIGHLIGHT */
+.person-card.website-creator {
+    border: 1px solid #ffd0a8;
+}
+
 .person-card.website-creator .person-photo {
     background: #f58220;
     color: #ffffff;
-}
-
-.person-card.website-creator {
-    border: 1px solid #ffd0a8;
 }
 
 .creator-badge {
@@ -674,6 +682,7 @@ footer p {
 
 <!-- TOP HEADER -->
 <header id="home">
+
     <div class="brand-row">
 
         <div class="header-logo">
@@ -707,6 +716,7 @@ footer p {
         <a href="#coordinator">Coordinator</a>
         <a href="#cart">Cart 🛒</a>
     </nav>
+
 </header>
 
 <!-- COVER PHOTO -->
@@ -765,11 +775,13 @@ footer p {
     <div class="product-box">
 
         <div class="product-image">
+
             <img src="images/keyring.jpg"
                  alt="Modhur Hari Keyring"
                  onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
 
             <div class="product-fallback">🔑</div>
+
         </div>
 
         <h3>Modhur Hari Keyring</h3>
@@ -781,6 +793,7 @@ footer p {
         <p class="price">Available at Stall</p>
 
     </div>
+
 </section>
 
 <!-- GAME -->
@@ -794,6 +807,7 @@ footer p {
     <div class="game-box">
 
         <div class="game-photo">
+
             <img src="images/cup-shot.jpg"
                  alt="Cup Shot Game illustration"
                  onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
@@ -801,6 +815,7 @@ footer p {
             <div class="game-photo-fallback">
                 🏀 Cup Shot Challenge
             </div>
+
         </div>
 
         <h3>🏀 Cup Shot Game</h3>
@@ -826,6 +841,7 @@ footer p {
         </button>
 
     </div>
+
 </section>
 
 <!-- TEAM -->
@@ -860,12 +876,13 @@ footer p {
         <p>Our student teams for South Asia Bazar 3.0</p>
     </div>
 
-    <!-- DECORATION -->
+    <!-- DECORATION DEPARTMENT -->
     <div class="department-card">
 
         <h3>Decoration Department</h3>
 
         <div class="table-wrap">
+
             <table class="department-table">
 
                 <thead>
@@ -892,6 +909,7 @@ footer p {
                 </tbody>
 
             </table>
+
         </div>
 
         <p class="department-note">
@@ -900,12 +918,13 @@ footer p {
 
     </div>
 
-    <!-- CULTURAL -->
+    <!-- CULTURAL DEPARTMENT -->
     <div class="department-card">
 
         <h3>Cultural Department</h3>
 
         <div class="table-wrap">
+
             <table class="department-table">
 
                 <thead>
@@ -929,6 +948,7 @@ footer p {
                 </tbody>
 
             </table>
+
         </div>
 
     </div>
@@ -944,11 +964,14 @@ footer p {
     </div>
 
     <div class="coordinator-card">
+
         <h3>Rawkat Noor Priata</h3>
+
         <p>
             South Asia Bazar 3.0 Coordinator,
             University Of South Asia
         </p>
+
     </div>
 
 </section>
@@ -1065,28 +1088,85 @@ foods.forEach((food, index) => {
                 </button>
 
             </div>
+
         </div>
     `;
 });
 
-/* TEAM DATA */
+/* TEAM DATA WITH STUDENT ID */
 const team = [
-    {name:"Moutushi Sultana", semester:"8th", photo:"moutushi.jpg"},
-    {name:"Sahariya Sultana Eva", semester:"1st", photo:"sahariya.jpg"},
-    {name:"Sham Sundar Ghosh", semester:"2nd", photo:"sham.jpg"},
-    {name:"Md Radi Islam Rafi", semester:"2nd", photo:"rafi.jpg"},
-    {name:"Md. Didar Ahmmed Sajon", semester:"4th", photo:"sajon.jpg"},
-    {name:"Md Moniruzzaman Hridoy", semester:"2nd", photo:"hridoy.jpg"},
-    {name:"Sheikh Rakibul Hassan", semester:"2nd", photo:"rakibul.jpg"},
-    {name:"Rashidul Islam", semester:"1st", photo:"rashidul.jpg"},
-    {name:"Sanjida Akter Happy", semester:"1st", photo:"happy.jpg"},
-    {name:"Shumona Sumu", semester:"1st", photo:"sumu.jpg"}
+    {
+        name: "Moutushi Sultana",
+        semester: "8th",
+        studentId: "242-0375-001",
+        photo: "moutushi.jpg"
+    },
+    {
+        name: "Sahariya Sultana Eva",
+        semester: "1st",
+        studentId: "263-0352-001",
+        photo: "sahariya.jpg"
+    },
+    {
+        name: "Sham Sundar Ghosh",
+        semester: "2nd",
+        studentId: "262-0330-001",
+        photo: "sham.jpg"
+    },
+    {
+        name: "Md Radi Islam Rafi",
+        semester: "2nd",
+        studentId: "262-0451-001",
+        photo: "rafi.jpg"
+    },
+    {
+        name: "Md. Didar Ahmmed Sajon",
+        semester: "4th",
+        studentId: "253-0407-001",
+        photo: "sajon.jpg"
+    },
+    {
+        name: "Md Moniruzzaman Hridoy",
+        semester: "2nd",
+        studentId: "262-0132-001",
+        photo: "hridoy.jpg"
+    },
+    {
+        name: "Sheikh Rakibul Hassan",
+        semester: "2nd",
+        studentId: "262-0198-001",
+        photo: "rakibul.jpg"
+    },
+    {
+        name: "Rashidul Islam",
+        semester: "1st",
+        studentId: "262-0102-001",
+        photo: "rashidul.jpg"
+    },
+    {
+        name: "Sanjida Akter Happy",
+        semester: "1st",
+        studentId: "263-0483-001",
+        photo: "happy.jpg"
+    },
+    {
+        name: "Shumona Sumu",
+        semester: "1st",
+        studentId: "263-0002-001",
+        photo: "sumu.jpg"
+    }
 ];
 
 /* VOLUNTEERS DATA */
 const volunteers = [
-    {name:"Azwa Abbas Nuha", photo:"azwa.jpg"},
-    {name:"Maimuna Binte Azad", photo:"maimuna.jpg"}
+    {
+        name: "Azwa Abbas Nuha",
+        photo: "azwa.jpg"
+    },
+    {
+        name: "Maimuna Binte Azad",
+        photo: "maimuna.jpg"
+    }
 ];
 
 /* SHOW PEOPLE */
@@ -1106,6 +1186,7 @@ function showPeople(list, containerId) {
             person.name === "Md Radi Islam Rafi";
 
         container.innerHTML += `
+
             <div class="person-card ${isCreator ? 'website-creator' : ''}">
 
                 <div class="person-photo">
@@ -1124,12 +1205,20 @@ function showPeople(list, containerId) {
                     </p>
                 ` : ''}
 
-                ${person.semester ?
-                    `<p>${person.semester} Semester</p>` :
-                    `<p>Volunteer</p>`
-                }
+                ${person.semester ? `
+                    <p>${person.semester} Semester</p>
+                ` : `
+                    <p>Volunteer</p>
+                `}
+
+                ${person.studentId ? `
+                    <p class="student-id">
+                        ID: ${person.studentId}
+                    </p>
+                ` : ''}
 
             </div>
+
         `;
     });
 }
@@ -1178,12 +1267,15 @@ function updateCart() {
     const totalElement = document.getElementById("cart-total");
 
     if (cart.length === 0) {
+
         cartItems.innerHTML = "Your cart is empty.";
         totalElement.textContent = 0;
+
         return;
     }
 
     let total = 0;
+
     cartItems.innerHTML = "";
 
     cart.forEach((item, index) => {
@@ -1193,6 +1285,7 @@ function updateCart() {
         total += subtotal;
 
         cartItems.innerHTML += `
+
             <div class="cart-item">
 
                 <div>
@@ -1206,6 +1299,7 @@ function updateCart() {
                 </button>
 
             </div>
+
         `;
     });
 
@@ -1220,6 +1314,7 @@ function checkout() {
     }
 
     let message = "Your Order Summary:\n\n";
+
     let total = 0;
 
     cart.forEach(item => {
@@ -1263,9 +1358,11 @@ function playGame() {
 
         document.getElementById("game-result").textContent =
             "Missed! Try the next shot.";
+
     }
 
     document.getElementById("shots").textContent = shots;
+
     document.getElementById("score").textContent = score;
 
     if (shots === 5) {
@@ -1283,6 +1380,7 @@ function resetGame() {
     score = 0;
 
     document.getElementById("shots").textContent = 0;
+
     document.getElementById("score").textContent = 0;
 
     document.getElementById("game-result").textContent =
