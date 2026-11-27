@@ -111,21 +111,19 @@ nav a:hover {
     color: #f58220;
 }
 
-/* COVER IMAGE */
+/* FULL COVER IMAGE — SHOW THE COMPLETE IMAGE ON DESKTOP AND MOBILE */
 .cover-strip {
     width: 100%;
-    aspect-ratio: 2048 / 683;
-    max-height: 230px;
-    min-height: 90px;
-    overflow: hidden;
+    height: auto;
     background: #fff0e2;
 }
 
 .cover-strip img {
     display: block;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
     object-position: center;
 }
 
@@ -638,11 +636,6 @@ footer p {
     .logo img {
         width: 58px;
         height: 52px;
-    }
-
-    .cover-strip {
-        min-height: 0;
-        max-height: 120px;
     }
 
     nav {
