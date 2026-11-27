@@ -1,1395 +1,439 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Modhur Hari | South Asia Bazar 3.0</title>
-
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-    scroll-behavior: smooth;
-}
-
-body {
-    background: #fffaf5;
-    color: #333;
-}
-
-/* TOP HEADER */
-header {
-    background: #ffffff;
-    color: #333333;
-    padding: 12px 5% 10px;
-    border-bottom: 4px solid #f58220;
-}
-
-.brand-row {
-    display: grid;
-    grid-template-columns: 88px minmax(0, 1fr) 88px;
-    align-items: center;
-    gap: 16px;
-}
-
-.header-logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 0;
-}
-
-.header-logo img {
-    width: 78px;
-    height: 72px;
-    object-fit: contain;
-    display: block;
-}
-
-.brand-copy {
-    min-width: 0;
-    text-align: center;
-}
-
-.brand-copy h1 {
-    color: #e96b10;
-    font-size: 38px;
-    line-height: 1.1;
-    margin-bottom: 7px;
-}
-
-.brand-headline {
-    color: #555555;
-    font-size: 15px;
-    font-weight: 700;
-}
-
-.stall-label {
-    display: inline-block;
-    margin-left: 8px;
-    padding: 4px 10px;
-    border-radius: 20px;
-    background: #f58220;
-    color: #ffffff;
-    font-size: 12px;
-    vertical-align: middle;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex: 0 0 auto;
-}
-
-.logo img {
-    width: 76px;
-    height: 68px;
-    object-fit: contain;
-    display: block;
-}
-
-nav {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 18px;
-    margin-top: 13px;
-}
-
-nav a {
-    color: #a84b08;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: bold;
-}
-
-nav a:hover {
-    color: #f58220;
-}
-
-/* COVER IMAGE */
-.cover-strip {
-    width: 100%;
-    aspect-ratio: 2048 / 683;
-    max-height: 230px;
-    min-height: 90px;
-    overflow: hidden;
-    background: #fff0e2;
-}
-
-.cover-strip img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-}
-
-/* HOME INTRO */
-.hero {
-    min-height: 125px;
-    background: #fff7ef;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: #c85b0b;
-    padding: 22px 20px;
-}
-
-.hero .tag {
-    color: #e96b10;
-    font-size: 13px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.hero p {
-    font-size: 15px;
-    margin-bottom: 5px;
-}
-
-.main-btn {
-    display: inline-block;
-    margin-top: 12px;
-    background: #f58220;
-    color: #ffffff;
-    padding: 11px 22px;
-    border-radius: 25px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* EVENT INFO */
-.event-info {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 60px;
-    padding: 25px 15px;
-    background: #fff7ef;
-    text-align: center;
-}
-
-.event-info h4 {
-    font-size: 13px;
-    color: #c85b0b;
-    margin-bottom: 5px;
-}
-
-.event-info p {
-    font-size: 13px;
-}
-
-/* GENERAL SECTION */
-section {
-    padding: 55px 6%;
-}
-
-.section-heading {
-    text-align: center;
-    margin-bottom: 35px;
-}
-
-.section-heading h2 {
-    font-size: 30px;
-    color: #c85b0b;
-    margin-bottom: 10px;
-}
-
-.section-heading p {
-    color: #777;
-    font-size: 14px;
-}
-
-/* FOOD MENU */
-.food-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 22px;
-}
-
-.food-card {
-    background: white;
-    border-radius: 12px;
-    overflow: hidden;
-    text-align: center;
-    box-shadow: 0 3px 15px rgba(0,0,0,0.08);
-    transition: 0.3s;
-}
-
-.food-card:hover {
-    transform: translateY(-5px);
-}
-
-.food-image {
-    height: 180px;
-    background: #fff0e2;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.food-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.food-fallback {
-    font-size: 65px;
-    display: none;
-}
-
-.food-details {
-    padding: 18px;
-}
-
-.food-details h3 {
-    font-size: 17px;
-    margin-bottom: 10px;
-}
-
-.price {
-    color: #e96b10;
-    font-weight: bold;
-    margin-bottom: 12px;
-}
-
-.action-btn {
-    background: #c85b0b;
-    color: white;
-    border: none;
-    padding: 10px 18px;
-    border-radius: 20px;
-    cursor: pointer;
-}
-
-.action-btn:hover {
-    background: #d96b16;
-}
-
-/* PRODUCT */
-.product-box {
-    max-width: 350px;
-    margin: auto;
-    text-align: center;
-    background: white;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 3px 15px rgba(0,0,0,0.08);
-}
-
-.product-image {
-    height: 190px;
-    background: #fff0e2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 15px;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.product-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-.product-fallback {
-    font-size: 75px;
-    display: none;
-}
-
-/* CUP SHOT IMAGE */
-.game-photo {
-    width: 100%;
-    height: 155px;
-    margin-bottom: 20px;
-    overflow: hidden;
-    border-radius: 10px;
-    background: #fff0e2;
-}
-
-.game-photo img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-.game-photo-fallback {
-    display: none;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
-    color: #c85b0b;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-/* COORDINATOR */
-.coordinator-card {
-    max-width: 540px;
-    margin: 0 auto;
-    padding: 25px 20px;
-    text-align: center;
-    background: #fff3e8;
-    border: 1px solid #ffd4b0;
-    border-top: 4px solid #f58220;
-    border-radius: 12px;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.06);
-}
-
-.coordinator-card h3 {
-    color: #c85b0b;
-    font-size: 20px;
-    margin-bottom: 10px;
-}
-
-.coordinator-card p {
-    color: #666;
-    font-size: 14px;
-    line-height: 1.6;
-}
-
-/* GAME */
-.game-box {
-    max-width: 500px;
-    margin: auto;
-    background: #fff3e8;
-    padding: 30px;
-    border-radius: 15px;
-    text-align: center;
-}
-
-.game-box h3 {
-    color: #c85b0b;
-    margin-bottom: 15px;
-}
-
-.game-box p {
-    margin: 12px 0;
-}
-
-.game-btn {
-    background: #c85b0b;
-    color: white;
-    border: none;
-    padding: 12px 25px;
-    border-radius: 25px;
-    cursor: pointer;
-    margin-top: 15px;
-}
-
-#game-result {
-    font-weight: bold;
-    margin-top: 18px;
-}
-
-/* TEAM */
-.people-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-    gap: 20px;
-}
-
-.person-card {
-    background: white;
-    padding: 18px;
-    text-align: center;
-    border-radius: 12px;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.07);
-}
-
-.person-photo {
-    width: 105px;
-    height: 105px;
-    border-radius: 50%;
-    margin: 0 auto 15px;
-    overflow: hidden;
-    background: #f3dfc2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 32px;
-    color: #c85b0b;
-}
-
-.person-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.person-card h3 {
-    font-size: 15px;
-    margin-bottom: 8px;
-}
-
-.person-card p {
-    color: #777;
-    font-size: 13px;
-}
-
-/* STUDENT ID */
-.student-id {
-    font-size: 12px !important;
-    color: #888 !important;
-    margin-top: 5px;
-    letter-spacing: 0.3px;
-}
-
-/* WEBSITE CREATOR HIGHLIGHT */
-.person-card.website-creator {
-    border: 1px solid #ffd0a8;
-}
-
-.person-card.website-creator .person-photo {
-    background: #f58220;
-    color: #ffffff;
-}
-
-.creator-badge {
-    display: inline-block;
-    background: #fff0e2;
-    color: #e96b10 !important;
-    font-weight: bold;
-    font-size: 12px !important;
-    padding: 6px 12px;
-    border-radius: 20px;
-    margin: 0 0 10px;
-}
-
-/* CART */
-.cart-box {
-    max-width: 650px;
-    margin: auto;
-    padding: 25px;
-    background: #fff3e8;
-    border-radius: 12px;
-}
-
-.cart-box h3 {
-    color: #c85b0b;
-    margin-bottom: 15px;
-}
-
-.cart-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
-    padding: 12px 0;
-    border-bottom: 1px solid #e5d3bb;
-}
-
-.remove-btn {
-    border: none;
-    background: #a52a2a;
-    color: white;
-    padding: 6px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.total {
-    font-size: 20px;
-    font-weight: bold;
-    margin-top: 20px;
-    color: #c85b0b;
-}
-
-.checkout-btn {
-    width: 100%;
-    padding: 13px;
-    margin-top: 18px;
-    background: #c85b0b;
-    color: white;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-}
-
-/* FOOTER */
-footer {
-    background: #c85b0b;
-    color: white;
-    text-align: center;
-    padding: 30px 15px;
-}
-
-footer h2 {
-    margin-bottom: 10px;
-}
-
-footer p {
-    font-size: 13px;
-    line-height: 1.8;
-}
-
-/* DEPARTMENT MEMBER LISTS */
-.department-section {
-    background: #fffaf5;
-}
-
-.department-card {
-    max-width: 1100px;
-    margin: 0 auto 28px;
-    background: #ffffff;
-    border: 1px solid #f4d5bd;
-    border-radius: 14px;
-    overflow: hidden;
-    box-shadow: 0 3px 14px rgba(0,0,0,0.06);
-}
-
-.department-card h3 {
-    padding: 16px 20px;
-    color: #c85b0b;
-    background: #fff0e2;
-    border-bottom: 2px solid #f58220;
-    font-size: 20px;
-}
-
-.table-wrap {
-    width: 100%;
-    overflow-x: auto;
-}
-
-.department-table {
-    width: 100%;
-    border-collapse: collapse;
-    min-width: 760px;
-    font-size: 13px;
-}
-
-.department-table th,
-.department-table td {
-    padding: 12px 13px;
-    text-align: left;
-    border-bottom: 1px solid #f0e3d9;
-    white-space: nowrap;
-}
-
-.department-table th {
-    color: #ffffff;
-    background: #c85b0b;
-    font-weight: 700;
-}
-
-.department-table tbody tr:nth-child(even) {
-    background: #fff8f2;
-}
-
-.department-table tbody tr:hover {
-    background: #fff0e2;
-}
-
-.department-table td:first-child,
-.department-table th:first-child {
-    text-align: center;
-}
-
-.department-note {
-    padding: 10px 16px;
-    color: #777;
-    font-size: 12px;
-    background: #fffaf5;
-}
-
-/* MOBILE */
-@media(max-width: 600px) {
+/* =================================
+   RESPONSIVE MOBILE DESIGN
+================================= */
+
+/* TABLET */
+@media (max-width: 900px) {
 
     header {
-        padding: 11px 4%;
+        padding: 10px 3%;
     }
 
     .brand-row {
-        grid-template-columns: 52px minmax(0, 1fr) 52px;
-        gap: 7px;
+        grid-template-columns: 65px minmax(0, 1fr) 65px;
+        gap: 10px;
     }
 
-    .header-logo img {
-        width: 48px;
-        height: 48px;
+    .header-logo img,
+    .logo img {
+        width: 60px;
+        height: 58px;
     }
 
     .brand-copy h1 {
-        font-size: 25px;
-    }
-
-    .brand-headline {
-        font-size: 10px;
-    }
-
-    .stall-label {
-        font-size: 10px;
-        padding: 3px 7px;
-        margin-left: 3px;
-    }
-
-    .logo img {
-        width: 58px;
-        height: 52px;
-    }
-
-    .cover-strip {
-        min-height: 0;
-        max-height: 120px;
+        font-size: 30px;
     }
 
     nav {
-        justify-content: center;
-        gap: 12px;
+        gap: 13px;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+
+    section {
+        padding: 45px 4%;
+    }
+
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+
+    * {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+        overflow-x: hidden;
+        font-size: 14px;
+    }
+
+    /* HEADER */
+
+    header {
+        padding: 9px 10px;
+        border-bottom: 3px solid #f58220;
+    }
+
+    .brand-row {
+        grid-template-columns: 43px minmax(0, 1fr) 43px;
+        gap: 5px;
+    }
+
+    .header-logo img {
+        width: 42px;
+        height: 42px;
+    }
+
+    .brand-copy h1 {
+        font-size: clamp(21px, 6vw, 27px);
+        margin-bottom: 4px;
+    }
+
+    .brand-headline {
+        font-size: 9px;
+    }
+
+    .stall-label {
+        font-size: 9px;
+        padding: 3px 6px;
+        margin-left: 3px;
+    }
+
+    /* NAVIGATION */
+
+    nav {
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        white-space: nowrap;
+        gap: 17px;
+        margin-top: 12px;
+        padding: 5px 2px 7px;
+        scrollbar-width: none;
+    }
+
+    nav::-webkit-scrollbar {
+        display: none;
     }
 
     nav a {
         font-size: 12px;
+        flex-shrink: 0;
+    }
+
+    /* COVER IMAGE */
+
+    .cover-strip {
+        width: 100%;
+        aspect-ratio: 2048 / 683;
+        min-height: 0;
+        max-height: 125px;
+    }
+
+    .cover-strip img {
+        object-fit: cover;
+    }
+
+    /* HERO */
+
+    .hero {
+        min-height: auto;
+        padding: 24px 12px;
     }
 
     .hero h1 {
-        font-size: 38px;
+        font-size: 28px;
     }
 
-    .hero {
-        min-height: 350px;
+    .hero .tag {
+        font-size: 11px;
+        margin-bottom: 7px;
     }
+
+    .hero p {
+        font-size: 13px;
+    }
+
+    .main-btn {
+        font-size: 12px;
+        padding: 10px 18px;
+        margin-top: 10px;
+    }
+
+    /* EVENT INFORMATION */
 
     .event-info {
-        gap: 20px;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 8px;
+        padding: 17px 8px;
     }
 
+    .event-info h4 {
+        font-size: 10px;
+    }
+
+    .event-info p {
+        font-size: 10px;
+        line-height: 1.4;
+    }
+
+    /* GENERAL SECTIONS */
+
     section {
-        padding: 40px 5%;
+        padding: 32px 14px;
+    }
+
+    .section-heading {
+        margin-bottom: 22px;
     }
 
     .section-heading h2 {
+        font-size: 23px;
+        margin-bottom: 7px;
+    }
+
+    .section-heading p {
+        font-size: 12px;
+    }
+
+    /* FOOD MENU */
+
+    .food-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .food-card {
+        border-radius: 10px;
+    }
+
+    .food-card:hover {
+        transform: none;
+    }
+
+    .food-image {
+        height: 125px;
+    }
+
+    .food-details {
+        padding: 11px 7px;
+    }
+
+    .food-details h3 {
+        font-size: 13px;
+        line-height: 1.4;
+        min-height: 36px;
+        margin-bottom: 7px;
+    }
+
+    .price {
+        font-size: 13px;
+        margin-bottom: 9px;
+    }
+
+    .action-btn {
+        font-size: 10px;
+        padding: 9px 10px;
+        width: 100%;
+    }
+
+    .food-fallback {
+        font-size: 45px;
+    }
+
+    /* PRODUCT */
+
+    .product-box {
+        max-width: 100%;
+        padding: 15px;
+        border-radius: 12px;
+    }
+
+    .product-image {
+        height: 165px;
+    }
+
+    .product-box h3 {
+        font-size: 17px;
+    }
+
+    /* GAME */
+
+    .game-box {
+        padding: 18px 13px;
+        border-radius: 12px;
+    }
+
+    .game-box h3 {
+        font-size: 18px;
+    }
+
+    .game-box p {
+        font-size: 13px;
+        margin: 10px 0;
+    }
+
+    .game-photo {
+        height: 130px;
+    }
+
+    .game-btn {
+        font-size: 12px;
+        padding: 11px 20px;
+    }
+
+    /* TEAM & VOLUNTEERS */
+
+    .people-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .person-card {
+        padding: 13px 7px;
+        border-radius: 10px;
+        min-width: 0;
+    }
+
+    .person-photo {
+        width: 75px;
+        height: 75px;
+        margin-bottom: 10px;
         font-size: 25px;
     }
-}
-</style>
-</head>
 
-<body>
-
-<!-- TOP HEADER -->
-<header id="home">
-
-    <div class="brand-row">
-
-        <div class="header-logo">
-            <img src="images/university-of-south-asia-logo.png"
-                 alt="University of South Asia Logo">
-        </div>
-
-        <div class="brand-copy">
-            <h1>Modhur Hari</h1>
-            <div class="brand-headline">
-                A Little Taste of Happiness!
-                <span class="stall-label">STALL: 08</span>
-            </div>
-        </div>
-
-        <div class="header-logo">
-            <img src="images/south-asia-bazar-3-logo.png"
-                 alt="South Asia Bazar 3.0 Logo">
-        </div>
-
-    </div>
-
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#food">Food Menu</a>
-        <a href="#product">Product</a>
-        <a href="#game">Game</a>
-        <a href="#team">Our Team</a>
-        <a href="#volunteers">Volunteers</a>
-        <a href="#departments">Departments</a>
-        <a href="#coordinator">Coordinator</a>
-        <a href="#cart">Cart 🛒</a>
-    </nav>
-
-</header>
-
-<!-- COVER PHOTO -->
-<div class="cover-strip">
-    <img src="images/cover-banner.png"
-         alt="Modhur Hari and University of South Asia cover">
-</div>
-
-<!-- HOME INTRO -->
-<div class="hero">
-    <div class="tag">SOUTH ASIA BAZAR 3.0</div>
-    <p>Food • Fun • Memories</p>
-    <a href="#food" class="main-btn">EXPLORE OUR STALL</a>
-</div>
-
-<!-- EVENT INFO -->
-<div class="event-info">
-
-    <div>
-        <h4>EVENT</h4>
-        <p>South Asia Bazar 3.0</p>
-    </div>
-
-    <div>
-        <h4>VENUE</h4>
-        <p>University of South Asia</p>
-    </div>
-
-    <div>
-        <h4>STALL</h4>
-        <p>Modhur Hari</p>
-    </div>
-
-</div>
-
-<!-- FOOD MENU -->
-<section id="food">
-
-    <div class="section-heading">
-        <h2>Our Food Menu</h2>
-        <p>Delicious food, unforgettable moments!</p>
-    </div>
-
-    <div class="food-grid" id="food-list"></div>
-
-</section>
-
-<!-- PRODUCT -->
-<section id="product">
-
-    <div class="section-heading">
-        <h2>Our Special Product</h2>
-        <p>Something special from Modhur Hari!</p>
-    </div>
-
-    <div class="product-box">
-
-        <div class="product-image">
-
-            <img src="images/keyring.jpg"
-                 alt="Modhur Hari Keyring"
-                 onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
-
-            <div class="product-fallback">🔑</div>
-
-        </div>
-
-        <h3>Modhur Hari Keyring</h3>
-
-        <p style="margin:12px 0;color:#777;">
-            A little memory to take home!
-        </p>
-
-        <p class="price">Available at Stall</p>
-
-    </div>
-
-</section>
-
-<!-- GAME -->
-<section id="game">
-
-    <div class="section-heading">
-        <h2>Cup Shot Challenge</h2>
-        <p>Play • Enjoy • Win</p>
-    </div>
-
-    <div class="game-box">
-
-        <div class="game-photo">
-
-            <img src="images/cup-shot.jpg"
-                 alt="Cup Shot Game illustration"
-                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-
-            <div class="game-photo-fallback">
-                🏀 Cup Shot Challenge
-            </div>
-
-        </div>
-
-        <h3>🏀 Cup Shot Game</h3>
-
-        <p>Try your luck with 5 shots!</p>
-        <p>Each successful shot earns 10 points.</p>
-
-        <p>Shots: <span id="shots">0</span> / 5</p>
-        <p>Score: <span id="score">0</span></p>
-
-        <button class="game-btn"
-                id="shot-btn"
-                onclick="playGame()">
-            TAKE A SHOT
-        </button>
-
-        <div id="game-result">
-            Best of luck!
-        </div>
-
-        <button class="game-btn" onclick="resetGame()">
-            PLAY AGAIN
-        </button>
-
-    </div>
-
-</section>
-
-<!-- TEAM -->
-<section id="team">
-
-    <div class="section-heading">
-        <h2>Meet Our Team</h2>
-        <p>The people behind Modhur Hari!</p>
-    </div>
-
-    <div class="people-grid" id="team-list"></div>
-
-</section>
-
-<!-- VOLUNTEERS -->
-<section id="volunteers">
-
-    <div class="section-heading">
-        <h2>Our Volunteers</h2>
-        <p>Special thanks to our amazing volunteers!</p>
-    </div>
-
-    <div class="people-grid" id="volunteer-list"></div>
-
-</section>
-
-<!-- DEPARTMENT MEMBER LISTS -->
-<section id="departments" class="department-section">
-
-    <div class="section-heading">
-        <h2>Department Members</h2>
-        <p>Our student teams for South Asia Bazar 3.0</p>
-    </div>
-
-    <!-- DECORATION DEPARTMENT -->
-    <div class="department-card">
-
-        <h3>Decoration Department</h3>
-
-        <div class="table-wrap">
-
-            <table class="department-table">
-
-                <thead>
-                    <tr>
-                        <th>Serial No.</th>
-                        <th>Name</th>
-                        <th>Semester</th>
-                        <th>Student ID</th>
-                        <th>Number</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    <tr><td>1</td><td>Moutushi Sultana</td><td>8th</td><td>242-0375-001</td><td>01936888376</td></tr>
-                    <tr><td>2</td><td>Sahariya Sultana Eva</td><td>1st</td><td>263-0352-001</td><td>01326275823</td></tr>
-                    <tr><td>3</td><td>Sham Sundar Ghosh</td><td>2nd</td><td>262-0330-001</td><td>01799693345</td></tr>
-                    <tr><td>4</td><td>Md Radi Islam Rafi</td><td>2nd</td><td>262-0451-001</td><td>01857000317</td></tr>
-                    <tr><td>5</td><td>Md. Didar Ahmmed Sajon</td><td>4th</td><td>253-0407-001</td><td>01759665506</td></tr>
-                    <tr><td>6</td><td>Md Moniruzzaman Hridoy</td><td>2nd</td><td>262-0132-001</td><td>01311156901</td></tr>
-                    <tr><td>7</td><td>Sheikh Rakibul Hassan</td><td>2nd</td><td>262-0198-001</td><td>01882976372</td></tr>
-                    <tr><td>8</td><td>Rashidul Islam</td><td>1st</td><td>262-0102-001</td><td>01737204741</td></tr>
-                    <tr><td>9</td><td>Sanjida Akter Happy</td><td>1st</td><td>263-0483-001</td><td>01711035294</td></tr>
-                    <tr><td>10</td><td>Shumona Sumu</td><td>1st</td><td>263-0002-001</td><td>Not provided</td></tr>
-                </tbody>
-
-            </table>
-
-        </div>
-
-        <p class="department-note">
-            Note: The contact number for serial no. 10 was incomplete in the supplied information.
-        </p>
-
-    </div>
-
-    <!-- CULTURAL DEPARTMENT -->
-    <div class="department-card">
-
-        <h3>Cultural Department</h3>
-
-        <div class="table-wrap">
-
-            <table class="department-table">
-
-                <thead>
-                    <tr>
-                        <th>Serial No.</th>
-                        <th>Name</th>
-                        <th>Semester</th>
-                        <th>Student ID</th>
-                        <th>Number</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Sanjida Akter Happy</td>
-                        <td>1st</td>
-                        <td>263-0483-001</td>
-                        <td>01711035294</td>
-                    </tr>
-                </tbody>
-
-            </table>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- COORDINATOR -->
-<section id="coordinator">
-
-    <div class="section-heading">
-        <h2>Our Coordinator</h2>
-        <p>South Asia Bazar 3.0</p>
-    </div>
-
-    <div class="coordinator-card">
-
-        <h3>Rawkat Noor Priata</h3>
-
-        <p>
-            South Asia Bazar 3.0 Coordinator,
-            University Of South Asia
-        </p>
-
-    </div>
-
-</section>
-
-<!-- CART -->
-<section id="cart">
-
-    <div class="section-heading">
-        <h2>Your Cart 🛒</h2>
-        <p>Your selected items</p>
-    </div>
-
-    <div class="cart-box">
-
-        <h3>Order Summary</h3>
-
-        <div id="cart-items">
-            Your cart is empty.
-        </div>
-
-        <div class="total">
-            Total: ৳<span id="cart-total">0</span>
-        </div>
-
-        <button class="checkout-btn" onclick="checkout()">
-            CHECKOUT
-        </button>
-
-    </div>
-
-</section>
-
-<!-- FOOTER -->
-<footer>
-
-    <h2>Modhur Hari</h2>
-    <p>A Little Taste of Happiness!</p>
-    <p>South Asia Bazar 3.0</p>
-    <p>University of South Asia</p>
-
-    <p style="margin-top:15px;">
-        © 2026 Modhur Hari. All Rights Reserved.
-    </p>
-
-</footer>
-
-<script>
-
-/* FOOD DATA */
-const foods = [
-    {
-        name: "Papri Chaat",
-        price: 29,
-        image: "images/papri-chaat.jpg",
-        emoji: "🥗"
-    },
-    {
-        name: "Polao & Chicken Kofta",
-        price: 79,
-        image: "images/polao-kofta.jpg",
-        emoji: "🍛"
-    },
-    {
-        name: "American Chips Salad",
-        price: 49,
-        image: "images/chips-salad.jpg",
-        emoji: "🥔"
-    },
-    {
-        name: "Lajuk Piyaju",
-        price: 19,
-        image: "images/lajuk-piyaju.jpg",
-        emoji: "🧆"
-    },
-    {
-        name: "Tiramisu",
-        price: 49,
-        image: "images/tiramisu.jpg",
-        emoji: "🍰"
+    .person-card h3 {
+        font-size: 12px;
+        line-height: 1.4;
+        overflow-wrap: anywhere;
+        margin-bottom: 6px;
     }
-];
 
-/* SHOW FOOD */
-const foodList = document.getElementById("food-list");
-
-foods.forEach((food, index) => {
-
-    foodList.innerHTML += `
-        <div class="food-card">
-
-            <div class="food-image">
-
-                <img src="${food.image}"
-                     alt="${food.name}"
-                     onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
-
-                <div class="food-fallback">
-                    ${food.emoji}
-                </div>
-
-            </div>
-
-            <div class="food-details">
-
-                <h3>${food.name}</h3>
-
-                <div class="price">
-                    ৳${food.price}
-                </div>
-
-                <button class="action-btn"
-                        onclick="addToCart(${index})">
-                    ADD TO CART
-                </button>
-
-            </div>
-
-        </div>
-    `;
-});
-
-/* TEAM DATA WITH STUDENT ID */
-const team = [
-    {
-        name: "Moutushi Sultana",
-        semester: "8th",
-        studentId: "242-0375-001",
-        photo: "moutushi.jpg"
-    },
-    {
-        name: "Sahariya Sultana Eva",
-        semester: "1st",
-        studentId: "263-0352-001",
-        photo: "sahariya.jpg"
-    },
-    {
-        name: "Sham Sundar Ghosh",
-        semester: "2nd",
-        studentId: "262-0330-001",
-        photo: "sham.jpg"
-    },
-    {
-        name: "Md Radi Islam Rafi",
-        semester: "2nd",
-        studentId: "262-0451-001",
-        photo: "rafi.jpg"
-    },
-    {
-        name: "Md. Didar Ahmmed Sajon",
-        semester: "4th",
-        studentId: "253-0407-001",
-        photo: "sajon.jpg"
-    },
-    {
-        name: "Md Moniruzzaman Hridoy",
-        semester: "2nd",
-        studentId: "262-0132-001",
-        photo: "hridoy.jpg"
-    },
-    {
-        name: "Sheikh Rakibul Hassan",
-        semester: "2nd",
-        studentId: "262-0198-001",
-        photo: "rakibul.jpg"
-    },
-    {
-        name: "Rashidul Islam",
-        semester: "1st",
-        studentId: "262-0102-001",
-        photo: "rashidul.jpg"
-    },
-    {
-        name: "Sanjida Akter Happy",
-        semester: "1st",
-        studentId: "263-0483-001",
-        photo: "happy.jpg"
-    },
-    {
-        name: "Shumona Sumu",
-        semester: "1st",
-        studentId: "263-0002-001",
-        photo: "sumu.jpg"
+    .person-card p {
+        font-size: 11px;
     }
-];
 
-/* VOLUNTEERS DATA */
-const volunteers = [
-    {
-        name: "Azwa Abbas Nuha",
-        photo: "azwa.jpg"
-    },
-    {
-        name: "Maimuna Binte Azad",
-        photo: "maimuna.jpg"
+    .student-id {
+        font-size: 10px !important;
+        overflow-wrap: anywhere;
     }
-];
 
-/* SHOW PEOPLE */
-function showPeople(list, containerId) {
+    .creator-badge {
+        font-size: 10px !important;
+        padding: 5px 7px;
+    }
 
-    const container = document.getElementById(containerId);
+    /* DEPARTMENTS */
 
-    list.forEach(person => {
+    .department-card {
+        border-radius: 10px;
+        margin-bottom: 18px;
+    }
 
-        const initials = person.name
-            .split(" ")
-            .map(word => word[0])
-            .join("")
-            .substring(0, 2);
+    .department-card h3 {
+        font-size: 16px;
+        padding: 13px;
+    }
 
-        const isCreator =
-            person.name === "Md Radi Islam Rafi";
+    .department-table {
+        font-size: 12px;
+        min-width: 700px;
+    }
 
-        container.innerHTML += `
+    .department-table th,
+    .department-table td {
+        padding: 10px;
+    }
 
-            <div class="person-card ${isCreator ? 'website-creator' : ''}">
+    .department-note {
+        font-size: 10px;
+        line-height: 1.5;
+    }
 
-                <div class="person-photo">
+    /* COORDINATOR */
 
-                    <img src="images/${person.photo}"
-                         alt="${person.name}"
-                         onerror="this.style.display='none';this.parentElement.innerHTML='${initials}';">
+    .coordinator-card {
+        padding: 20px 12px;
+    }
 
-                </div>
+    .coordinator-card h3 {
+        font-size: 18px;
+    }
 
-                <h3>${person.name}</h3>
+    .coordinator-card p {
+        font-size: 12px;
+    }
 
-                ${isCreator ? `
-                    <p class="creator-badge">
-                        ✦ Website Creator
-                    </p>
-                ` : ''}
+    /* CART */
 
-                ${person.semester ? `
-                    <p>${person.semester} Semester</p>
-                ` : `
-                    <p>Volunteer</p>
-                `}
+    .cart-box {
+        padding: 16px 12px;
+    }
 
-                ${person.studentId ? `
-                    <p class="student-id">
-                        ID: ${person.studentId}
-                    </p>
-                ` : ''}
+    .cart-box h3 {
+        font-size: 17px;
+    }
 
-            </div>
+    .cart-item {
+        font-size: 12px;
+        gap: 6px;
+    }
 
-        `;
-    });
+    .remove-btn {
+        font-size: 10px;
+        padding: 6px 8px;
+    }
+
+    .total {
+        font-size: 18px;
+    }
+
+    .checkout-btn {
+        font-size: 12px;
+    }
+
+    /* FOOTER */
+
+    footer {
+        padding: 24px 12px;
+    }
+
+    footer h2 {
+        font-size: 22px;
+    }
+
+    footer p {
+        font-size: 11px;
+    }
+
 }
 
-showPeople(team, "team-list");
-showPeople(volunteers, "volunteer-list");
+/* SMALL MOBILE */
 
-/* CART */
-let cart = [];
+@media (max-width: 380px) {
 
-function addToCart(index) {
-
-    const food = foods[index];
-
-    const existing = cart.find(
-        item => item.name === food.name
-    );
-
-    if (existing) {
-        existing.quantity++;
-    } else {
-        cart.push({
-            name: food.name,
-            price: food.price,
-            quantity: 1
-        });
+    .brand-copy h1 {
+        font-size: 21px;
     }
 
-    updateCart();
+    .header-logo img {
+        width: 36px;
+        height: 36px;
+    }
+
+    .brand-headline {
+        font-size: 8px;
+    }
+
+    .stall-label {
+        font-size: 8px;
+    }
+
+    .food-grid {
+        gap: 9px;
+    }
+
+    .food-image {
+        height: 110px;
+    }
+
+    .food-details {
+        padding: 9px 6px;
+    }
+
+    .person-photo {
+        width: 68px;
+        height: 68px;
+    }
+
+    .section-heading h2 {
+        font-size: 21px;
+    }
+
 }
-
-function removeFromCart(index) {
-
-    cart[index].quantity--;
-
-    if (cart[index].quantity <= 0) {
-        cart.splice(index, 1);
-    }
-
-    updateCart();
-}
-
-function updateCart() {
-
-    const cartItems = document.getElementById("cart-items");
-    const totalElement = document.getElementById("cart-total");
-
-    if (cart.length === 0) {
-
-        cartItems.innerHTML = "Your cart is empty.";
-        totalElement.textContent = 0;
-
-        return;
-    }
-
-    let total = 0;
-
-    cartItems.innerHTML = "";
-
-    cart.forEach((item, index) => {
-
-        const subtotal = item.price * item.quantity;
-
-        total += subtotal;
-
-        cartItems.innerHTML += `
-
-            <div class="cart-item">
-
-                <div>
-                    <strong>${item.name}</strong>
-                    <p>৳${item.price} × ${item.quantity} = ৳${subtotal}</p>
-                </div>
-
-                <button class="remove-btn"
-                        onclick="removeFromCart(${index})">
-                    Remove
-                </button>
-
-            </div>
-
-        `;
-    });
-
-    totalElement.textContent = total;
-}
-
-function checkout() {
-
-    if (cart.length === 0) {
-        alert("Your cart is empty!");
-        return;
-    }
-
-    let message = "Your Order Summary:\n\n";
-
-    let total = 0;
-
-    cart.forEach(item => {
-
-        const subtotal = item.price * item.quantity;
-
-        message += `${item.name} × ${item.quantity} = ৳${subtotal}\n`;
-
-        total += subtotal;
-    });
-
-    message += `\nTotal Bill: ৳${total}`;
-
-    message += "\n\nPlease visit the Modhur Hari Stall to complete your order.";
-
-    alert(message);
-}
-
-/* CUP SHOT GAME */
-let shots = 0;
-let score = 0;
-
-function playGame() {
-
-    if (shots >= 5) {
-        return;
-    }
-
-    shots++;
-
-    const success = Math.random() < 0.5;
-
-    if (success) {
-
-        score += 10;
-
-        document.getElementById("game-result").textContent =
-            "🎉 Great Shot! You scored 10 points!";
-
-    } else {
-
-        document.getElementById("game-result").textContent =
-            "Missed! Try the next shot.";
-
-    }
-
-    document.getElementById("shots").textContent = shots;
-
-    document.getElementById("score").textContent = score;
-
-    if (shots === 5) {
-
-        document.getElementById("game-result").textContent +=
-            " Game Over! Final Score: " + score;
-
-        document.getElementById("shot-btn").disabled = true;
-    }
-}
-
-function resetGame() {
-
-    shots = 0;
-    score = 0;
-
-    document.getElementById("shots").textContent = 0;
-
-    document.getElementById("score").textContent = 0;
-
-    document.getElementById("game-result").textContent =
-        "Best of luck!";
-
-    document.getElementById("shot-btn").disabled = false;
-}
-
-</script>
-
-</body>
-</html>
